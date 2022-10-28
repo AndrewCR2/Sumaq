@@ -42,6 +42,7 @@ public class HomeController {
 		 menu.add("Productos");
 		 menu.add("Contactenos");
 		 menu.add("Pedir Aqui");
+		 menu.add("Login");
 		
 	   model.addAttribute("TituloPagina",titlePage);
 		//model.addAttribute("titulo","Seccion J98");

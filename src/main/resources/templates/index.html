@@ -17,7 +17,7 @@
             </div>
             <ul th:each="item : ${menu}" class="nav_link nav_link-menu">
                 <li     class="nav_items">
-                 <a  th:text="${item}" href="#" class="nav_links"></a> 
+                 <a  th:text="${item}" th:href="${item}" class="nav_links"></a> 
                 </li>
                 <!--         <li class="nav_items">
                     <a href="#" class="nav_links">Ofecemos</a>
