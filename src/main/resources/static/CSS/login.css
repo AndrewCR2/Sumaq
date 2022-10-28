@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #FFBB0E, #ff9f0e);
+    
+}
+
+.container{
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.nav {
+    --padding-container: 0;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.nav_title {
+    font-weight: 300;
+}
+
+.nav_link {
+
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+
+}
+
+.nav_logo {
+    width: 100px;
+    padding: 12px;
+}
+
+.logo {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.nav_items {
+    list-style: none;
+    padding: 0px 20px;
+}
+
+#registro{
+    color: white;
+    border-radius: 20px;
+    background: #23C8B4;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+}
+
+.formu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-back{
+    background-color: white;
+    padding: 5.6rem  2.5rem;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: -6px 7px 9px 2px rgba(0,0,0,0.51);
+    -webkit-box-shadow: -6px 7px 9px 2px rgba(0,0,0,0.51);
+    -moz-box-shadow: -6px 7px 9px 2px rgba(0,0,0,0.51);
+}
+.figura-formulario{
+  max-width: 800px;
+}
+
+.logo-1{
+    width:100%;
+}
+
+.zone{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.cont{
+    margin-top: 7rem;
+}
+.titulo-zone{
+    text-align: center;
+}
+
+.formu-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ff6e0e;
+    font-size: 30px;
+
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+form .title{
+    color: #ff6e0e;
+    font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 30px;
+
+}
+
+form label{
+    margin-bottom: 35px;
+}
+form label .fa-solid{
+    font-size: 20px;
+    color: #23C8B4;
+    margin-right: 10px;
+}
+
+form label input{
+    outline: none;
+    border: none;
+    border-bottom: solid 1px #ff6e0e;
+    color: black;
+    font-size: 20px;
+    padding: 0 5px;
+    height: 2em;
+    width: 20em;
+}
+
+form .link{
+    color: #ff6e0e;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+form button{
+    color: white;
+    border-radius: 20px;
+    background: #23C8B4;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+}
+
+.nav_menu {
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+}
+
+.nav_close {
+    display: var(--show, none);
+
+}
+
+.nav_img {
+    display: block;
+    width: 30px;
+
+}
+#registro a{
+    text-decoration: none;
+    color: white;
+}
