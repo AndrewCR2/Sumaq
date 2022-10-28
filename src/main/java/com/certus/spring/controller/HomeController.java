@@ -45,7 +45,7 @@ public class HomeController {
 		
 	   model.addAttribute("TituloPagina",titlePage);
 		//model.addAttribute("titulo","Seccion J98");
-		model.addAttribute("menu",menu);
+	   model.addAttribute("menu",menu);
 		
 		
 		return "index";

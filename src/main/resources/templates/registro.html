@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${TituloPagina}"></title>
+    <link rel="stylesheet" href="/CSS/estilos-login.css">
+</head>
+<body>
+
+<div class="dentro">
+
+    <div class="hero_figure">
+        <div class="texto"><p id="text" th:text="${tituloImage}"></p></div><br>
+        <img src="/img/doble.png" class="img_mer">
+         
+    </div>
+
+    <div class="log">
+        <p class="regi" th:text="${tituloForm}"></p><br>
+        
+        
+        <div class="input-box"> 
+            <input type="text" placeholder="Nombre" class="input-control">
+        </div>
+
+        <div class="input-box"> 
+        <input type="text" placeholder="Email" class="input-control">
+        </div>
+
+        <div class="input-box"> 
+            <input type="text" placeholder="telefono" class="input-control">
+        </div>
+        
+        <div class="input-box"> 
+            <input type="password" placeholder="contraseña" class="input-control">
+        </div>
+
+        <div class="input-box"> 
+            <input type="password" placeholder="confirmar contraseña" class="input-control">
+        </div>
+
+        <button type="submit" class="btn">Registrate</button>
+    </div>
+</div>
+
+ 
+</body>
+</html>

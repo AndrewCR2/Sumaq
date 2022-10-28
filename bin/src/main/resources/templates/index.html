@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/main/resources/static/CSS/estilos.css">
+    <title th:text="${TituloPagina}"></title>
+</head>
+
+<body>
+    <header class="hero">
+        <nav class="nav container">
+            <div class="nav_logo">
+                <img src="/img/LogoSumaq.png" alt="" class="logo">
+            </div>
+            <ul th:each="item : ${menu}" class="nav_link nav_link-menu">
+                <li     class="nav_items">
+                 <a  th:text="${item}" href="#" class="nav_links"></a> 
+                </li>
+                <!--         <li class="nav_items">
+                    <a href="#" class="nav_links">Ofecemos</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#" class="nav_links">Productos</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#" class="nav_links">Contactenos</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#" class="nav_links">Pedir Aqui</a>
+                </li>
+                -->
+              
+                <img src="/img/close.svg" alt="" class="nav_close">
+            </ul>
+
+            <div class="nav_menu">
+                <img src="/img/menu.svg" alt="" class="nav_img">
+
+            </div>
+        </nav>
+    </header>
+    <section class="hero_container container">
+        <div class="hero_text">
+            <h1 class="hero_title">SUMAQ con fruta 100% natural</h1>
+            <p class="hero_paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque praesentium ea
+                provident iste</p>
+         
+        </div>
+        <figure class="hero_figure">
+            <img src="/img/mermelada.png" alt="" class="hero_img">
+        </figure>
+        <div class="wave wave--bottom"></div>
+    </section>
+    <main>
+        <section class="nosotros">
+            <div class="nosotros_container container">
+                <div class="nosotros_textos">
+                    <h2 class="subtitle">Nosotros</h2>
+                    <p class="nosotros_texto">Sumaq es un emprendimiento que busca revalorizar productos originarios del perú los cuales son consumidos desde la época de los Incas por su alto valor nutricional y por sus beneficios a las distintas afecciones que sufre el ser humano, Sumaq ofrece estos productos elaborados de forma artesanal contribuyendo aún más a la salud y bienestar de nuestros clientes.</p>
+                </div>
+                <figure class="nosotros_picture">
+                    <img src="/img/img_nosotros-1 (1).png" alt="" class="nosotros_img">
+
+                </figure>
+            </div>
+        </section>
+
+        <section class="block3">
+            <div class="container">
+ <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde commodi suscipit rerum nobis corrupti enim tempora, blanditiis ducimus consectetur velit, veniam officia dicta quidem. Quisquam, illum ea pariatur accusantium, at ad laboriosam corporis, vel perferendis quas deleniti! Et sapiente laboriosam, obcaecati temporibus magni cum ad voluptatum dolores id aliquam quo odit. Et, optio autem aspernatur atque expedita dicta. Nobis corrupti officiis inventore eveniet. Nesciunt illum nemo qui, magnam quisquam voluptatibus atque reiciendis, nulla laborum cupiditate quos! Iste quam placeat harum molestias assumenda sed vel praesentium facere aliquam nostrum cumque quis adipisci in architecto, autem mollitia, accusamus laudantium? Nulla maxime quidem inventore vel illo corporis dolorum non laborum praesentium recusandae omnis ipsa quae minima dolorem nesciunt vero accusantium at cupiditate, quibusdam itaque! Asperiores praesentium at incidunt itaque, mollitia adipisci? Iste incidunt, voluptatibus accusantium dolorem animi illum architecto aliquam iure excepturi cum aliquid mollitia nostrum necessitatibus repellendus, voluptatum eligendi deserunt totam nesciunt.</p>
+            </div>
+           
+            
+        </section>
+        <section class="ofrecemos_container container">
+            <h2 >¿Qué Ofecemos?</h2>
+            <div class="ofrecemos">
+                <article class="ofrecemos_cont">
+                    <img src="/img/servicio1.png" class="ofrecemos_img">
+                    <h3 class="about__title">Pago seguro y fácil</h3>
+                </article>
+                <article class="ofrecemos_cont">
+                    <img src="/img/servicio2.png" class="ofrecemos_img">
+                    <h3 class="about__title">Delivery</h3>
+
+                </article>
+                <article class="ofrecemos_cont">
+                    <img src="/img/servicio3.png" class="ofrecemos_img">
+                    <h3 class="about__title">Envíos rápidos a todo el país</h3>
+                </article>
+            </div>
+        </section>
+    </main>  
+</body>
+<script src="/JS/menu.js"></script>
+<script src="/JS/menu-scroll.js"></script>
+
+</html>

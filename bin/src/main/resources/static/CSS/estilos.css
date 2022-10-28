@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --padding-container: 100px 0;
+    --color-text:
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: var(--padding-container);
+}
+
+/*Header*/
+.hero {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: 0.5s;
+    z-index: 10;
+}
+
+.wave {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+
+    background-repeat: no-repeat;
+    background-size: 100% 100px;
+}
+
+.wave--bottom {
+    left: 0;
+    bottom: 0;
+    background-image: var(--wave-bottom);
+}
+
+.wave--top {
+    left: 0;
+    top: 0;
+    background-image: var(--wave-top);
+}
+
+
+
+/*Nav*/
+.nav {
+    --padding-container: 0;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.nav_title {
+    font-weight: 300;
+}
+
+.nav_link {
+
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+
+}
+
+.nav_logo {
+    width: 100px;
+    padding: 12px;
+}
+
+.logo {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.nav_items {
+    list-style: none;
+    padding: 0px 20px;
+
+}
+
+/*
+.nav_items:nth-last-child(2) a {
+
+    padding: 10px 30px;
+    line-height: 50px;
+    color: rgb(254, 152, 0);
+    background: #fff;
+    border: 1px solid rgb(254, 152, 0);
+    border-radius: 25px;
+    position: relative;
+
+}
+
+.nav_items:nth-last-child(2) a:hover {
+
+    color: white;
+    background: rgb(254, 152, 0);
+
+
+}
+*/
+.nav_links {
+    color: #4a4845;
+    text-decoration: none;
+}
+
+.nav_links:hover {
+    color: rgb(254, 152, 0);
+    transition: .3s all;
+}
+
+.nav_menu {
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+}
+
+.nav_close {
+    display: var(--show, none);
+
+}
+
+.nav_img {
+    display: block;
+    width: 30px;
+
+}
+
+
+/*Hero Container*/
+
+.hero_container {
+    min-height: 85vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+    justify-items: center;
+}
+
+.hero_text {
+    max-width: 800px;
+    display: grid;
+    grid-auto-rows: max-content;
+
+    gap: 1em;
+    padding-bottom: 100px;
+    text-align: start;
+    --padding-container: 0;
+}
+
+.hero_title {
+    font-size: 3rem;
+}
+
+.hero_paragrahp {
+    margin-bottom: 20px;
+}
+
+.hero_figure {
+    max-width: 400px;
+
+}
+
+.hero_img {
+    width: 100%;
+    display: block;
+
+    filter: drop-shadow(5px 10px 20px rgb(109, 109, 109));
+
+}
+
+
+.cta {
+    display: inline-block;
+    background-color: #ffcb45;
+    justify-self: start;
+    color: white;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 32px;
+}
+
+header.abajo {
+    background-color: #fff;
+}
+
+header.abajo .nav_logo {
+    width: 82px;
+    padding: 8px;       
+}
+header.abajo{
+    box-shadow: 0 4px 25px -22px black;
+}
+
+header.abajo .logo,
+header.abajo ul li a {
+    color: black;
+}
+
+/*Nosotros*/
+
+.nosotros {
+    background-color: rgb(254, 152, 0);
+}
+
+.nosotros_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+    justify-items: center;
+}
+
+.subtitle {
+    color: white;
+    font-size: 45px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.nosotros_texto {
+    line-height: 1.5;
+    margin-bottom: 15px;
+    padding: 1rem;
+    color: white;
+    font-size: 19px;
+}
+
+.nosotros_picture {
+    grid-row: 2/1;
+    max-width: 400px;
+}
+
+.nosotros_img {
+    width: 100%;
+    display: block;
+}
+
+.ofrecemos_container h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.ofrecemos {
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    gap: 1em;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+}
+
+.ofrecemos_cont {
+    display: grid;
+    gap: 1em;
+    justify-items: center;
+    width: 260px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.ofrecemos_img {
+    width: 100px;
+}
+
+/*Media Queries*/
+
+
+@media (max-width:1024px) {
+
+    .nav_menu {
+        display: block;
+    }
+
+    .nav_link-menu {
+        position: fixed;
+        background-color: black;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 100;
+        opacity: 0;
+        pointer-events: none;
+
+    }
+
+    .nav_link--show {
+        --show: block;
+        opacity: 1;
+        pointer-events: unset;
+        transition: .7s opacity;
+
+    }
+
+    .nav_close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+    .hero_title {
+        font-size: 2.5rem;
+    }
+
+    .about_main {
+        gap: 2em;
+    }
+
+    .nosotros_picture {
+
+        max-width: 300px;
+    }
+
+    .nosotros_container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 1.5em;
+
+    }
+
+}
+
+@media (max-width:768px) {
+    .hero {
+        --wave-bottom: url('../img/wave-botom-header-movil.svg');
+    }
+
+    .hero_title {
+        font-size: 1.8rem;
+    }
+
+    .hero_container {
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+        gap: 1em;
+        text-align: center;
+        --padding-container: 10rem 0 0 0;
+
+    }
+
+    .hero_text {
+        max-width: 800px;
+        display: grid;
+        grid-auto-rows: max-content;
+        gap: 1em;
+        padding-bottom: 0px;
+        text-align: center;
+        --padding-container: 0;
+    }
+
+    .hero_figure {
+        justify-self: center;
+        align-self: center;
+
+    }
+
+    .nosotros_texto {
+        font-size: 14px;
+        padding: 0;
+    }
+
+
+
+}
