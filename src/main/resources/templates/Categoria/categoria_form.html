@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+>
+<head>
+<meta charset="UTF-8">
+<title th:text="${TituloPagina}"></title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row" style="height: 100vh;">
+			
+			<div th:replace="Categoria/layout :: sidebar">
+			</div>
+			
+			<div class="col-9 p-4">
+				<h2>Crear categoria</h2>
+				<br>
+				<p>Agrega una nueva categoria y registra nuevos productos</p>
+				<form>
+					<input class="form-control w-50" placeholder="Ingresa el nombre de la categoria">
+					<br>
+					<button type="submit" class="btn btn-primary">Enviar</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
