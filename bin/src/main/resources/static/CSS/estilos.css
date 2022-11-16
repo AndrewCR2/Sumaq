@@ -389,3 +389,77 @@ header.abajo ul li a {
 
 
 }
+
+.footer {
+    padding: 30px 0;
+    background-color: #FDFDBD;
+    padding-bottom: 15px;
+}
+
+.img-footer {
+    width: 50px;
+}
+
+.logo-footer {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: -10px;
+    padding-bottom: 20px;
+}
+
+.footer .redes {
+    text-align: center;
+    padding-bottom: 2px;
+}
+
+.footer .redes a {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    opacity:  0.75;
+}
+
+.fb {
+    background: rgb(0, 132, 255);
+    border-radius: 50px;
+    color: white;
+    padding: 3px;
+}
+
+.in{
+    background: rgb(255, 0, 170);
+    border-radius: 50px;
+    color: white;
+    padding: 3px;
+}
+
+.yt {
+    background: rgb(255, 0, 0);
+    border-radius: 50px;
+    color: white;
+    padding: 3px;
+}
+
+.text{
+    text-align: center;
+    font-size: 13px;
+    padding-bottom: 10px;
+}
+
+.footer .redes a:hover {
+    opacity: 0.9;
+}
+
+.footer .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+   
+}

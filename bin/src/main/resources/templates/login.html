@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${TituloPagina}"></title>
+    <link rel="stylesheet" href="/CSS/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav class="nav container">
+        <div class="nav_logo">
+            <img src="img/LogoSumaq.png" alt="" class="logo">
+        </div>
+        <ul class="nav_link nav_link-menu">
+            <li class="nav_items"><button id="registro" ><a id="manda" href="registro">Registrarse ahora</a></button></li>
+        </ul>
+    </nav>
+
+    <div class="zone cont">
+        <div class="formu">
+            <div class="formu-img">
+                <h1 class="titulo-zone" th:text="${login}"></h1>
+                <figure class="figura-formulario">
+                    <img src="img/conjutoproductos.png" alt="" class="logo-1">
+                </figure>
+            </div>
+
+            <div class="form-back">
+                <form>
+                    <h1 class="title" th:text="${logeo}"></h1>
+                    <label>
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="username" required placeholder="Correo">
+                    </label>
+                    <label>
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" id="password" required placeholder="Contraseña">
+                    </label>
+                    <button id="button">Iniciar Sesión</button>
+                    <a href="#" class="link">¿Olvidaste tu contraseña?</a>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div class="nav_menu">
+        <img src="img/wave.svg" alt="" class="nav_img">
+    </div>
+    <footer class="footer">
+        <div class="logo-footer">
+            <img src="/img/LogoSumaq.png" alt="" class="img-footer">
+            <p>SUMAQ</p>
+        </div>
+        <p class="text">Siguenos en:</p>
+        <div class="redes">
+            <a href="https://www.facebook.com/profile.php?id=100086236074527" target="_blank" class="fb"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/sumaq.smaak/" target="_blank" class="in"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="yt"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="copyright">©2022 Creado por SUMAQ.</p>
+    </footer>
+    
+
+
+
+    <script src="/JS/login.js"></script>
+</body>
+
+</html>

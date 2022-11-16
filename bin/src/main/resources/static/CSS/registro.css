@@ -1,0 +1,155 @@
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, rgb(189, 4, 149) , rgba(116, 9, 107) ); 
+}
+.dentro{
+    width: 90%;
+    margin: 0 auto;
+    height: 500px;
+    display: flex;
+    margin-top: 50px;
+    
+}
+
+ .texto{
+    margin: 0 auto;
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+ #text{
+    font-size: 40px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+} 
+.hero_figure{
+    width: 50%;
+    margin: 0 auto;
+} 
+.img_mer{
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+} 
+
+
+.log{
+    width: 50%;
+    margin-left: 150px;
+    height: 30rem;
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+}
+.regi{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.input-box{
+    margin: 20px;
+    margin-right: 35px;
+    margin-left: 10px;
+}
+.input-control{
+    display: block;
+    height: 20px;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 15px;
+}
+.input-control:focus{
+    outline: none;
+}
+.btn{
+    height: 45px;
+    width: 95%;
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(35, 200, 180,255);
+}
+
+.footer {
+    padding: 30px 0;
+    background-color: #FDFDBD;
+    padding-bottom: 15px;
+}
+
+.img-footer {
+    width: 50px;
+}
+
+.logo-footer {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: -10px;
+    padding-bottom: 20px;
+}
+
+.footer .redes {
+    text-align: center;
+    padding-bottom: 2px;
+}
+
+.footer .redes a {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    opacity:  0.75;
+}
+
+.fb {
+    background: rgb(0, 132, 255);
+    border-radius: 50px;
+    color: white;
+    padding: 3px;
+}
+
+.in{
+    background: rgb(255, 0, 170);
+    border-radius: 50px;
+    color: white;
+    padding: 3px;
+}
+
+.yt {
+    background: rgb(255, 0, 0);
+    border-radius: 50px;
+    color: white;
+    padding: 3px;
+}
+
+.text{
+    text-align: center;
+    font-size: 13px;
+    padding-bottom: 10px;
+}
+
+.footer .redes a:hover {
+    opacity: 0.9;
+}
+
+.footer .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+   
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title th:text="${TituloPagina}"></title>
+<link rel="stylesheet" th:href="@{/bootstrap/bootstrap.min.css}">
+<link rel="stylesheet" href="/CSS/productos.css">
+<link rel="stylesheet" href="/CSS/estilos.css">
+</head>
+<body>
+
+	<header th:replace="/layout :: header"> </header>
+ <div class="container mt-2">
+		<div class="jumbotron">
+			<h1 class="display-4" th:text="${titulo}"></h1>
+			<p class="lead" th:text="${Estado}"></p>
+			<hr class="my-4">
+
+			<div>
+				<form th:action="@{/form_pro}" th:object="${producto}"
+					method="post" enctype="multipart/form-data">
+
+					<div class="form-group">
+						<label for="idNombre">Nombre</label> <input type="text"
+							name="nombre" class="form-control" id="idNombre"
+							th:field="*{nombre}">
+						<div class="alert alert-danger" role="alert"
+							th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+					</div>
+
+					<div class="form-group">
+						<label for="idPrecio">Precio</label> <input type="text"
+							name="precio" class="form-control" id="idPrecio"
+							th:field="*{precio}">
+						<div class="alert alert-danger" role="alert"
+							th:if="${#fields.hasErrors('precio')}" th:errors="*{precio}"></div>
+					</div>
+
+					<div class="form-group">
+						<label for="idDescripcion">Descripcion</label> <input type="text"
+							name="descripcion" class="form-control" id="idDescripcion"
+							th:field="*{descripcion}">
+						<div class="alert alert-danger" role="alert"
+							th:if="${#fields.hasErrors('descripcion')}"
+							th:errors="*{descripcion}"></div>
+					</div>
+
+					<div class="form-group">
+						<label for="idUriImagen">Enlace Imagen</label> <input type="file"
+							name="ImagenDelFormulario" class="form-control" id="idUriImagen">
+					</div>
+
+					<button type="submit" class="btn btn-success">Crear
+						Producto</button>
+				</form>
+			</div>
+
+		</div>
+	</div>
+ 
+	<script src="/JS/menu.js"></script>
+	<script src="/JS/menu-scroll.js"></script>
+	<script src="/bootstrap/jquery.slim.min.js"></script>
+	<script src="/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>

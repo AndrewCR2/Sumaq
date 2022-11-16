@@ -11,20 +11,20 @@
 </head>
 
 <body>
-    <header class="hero">
+        <header class="hero">
         <nav class="nav container">
             <div class="nav_logo">
                 <img src="/img/LogoSumaq.png" alt="" class="logo">
             </div>
-            <ul th:each="item : ${menu}" class="nav_link nav_link-menu">
-                <li     class="nav_items">
-                 <a  th:text="${item}" th:href="${item}" class="nav_links"></a> 
+            <ul class="nav_link nav_link-menu">
+                <li class="nav_items">
+                    <a href="#" class="nav_links">Nosotros</a>
                 </li>
-                <!--         <li class="nav_items">
+                <li class="nav_items">
                     <a href="#" class="nav_links">Ofecemos</a>
                 </li>
                 <li class="nav_items">
-                    <a href="#" class="nav_links">Productos</a>
+                    <a href="#" class="nav_links"  th:href="@{/Productos}">Productos</a>
                 </li>
                 <li class="nav_items">
                     <a href="#" class="nav_links">Contactenos</a>
@@ -32,8 +32,6 @@
                 <li class="nav_items">
                     <a href="#" class="nav_links">Pedir Aqui</a>
                 </li>
-                -->
-              
                 <img src="/img/close.svg" alt="" class="nav_close">
             </ul>
 

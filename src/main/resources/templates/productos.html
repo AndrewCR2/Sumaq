@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://thymeleaf.org">
+<head th:replace="/layout :: head">
+<meta charset="UTF-8">
+<title>Boton Flotante con Css</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+	integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/CSS/productos.css">
+<link rel="stylesheet" href="/CSS/estilos.css">
+
+
+</head>
+<body>
+	<header th:replace="/layout :: header"> </header>
+
+
+<a th:href="@{/crear}" class="btn-wsp">
+    <i class="fa-solid fa-circle-plus"></i>
+	</a>
+
+
+	<script src="https://kit.fontawesome.com/0ab519a029.js"
+		crossorigin="anonymous"></script>
+	<script src="/JS/menu.js"></script>
+	<script src="/JS/menu-scroll.js"></script>
+</body>
+</html>
