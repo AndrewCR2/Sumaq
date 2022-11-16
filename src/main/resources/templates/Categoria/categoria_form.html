@@ -20,9 +20,11 @@
 			<div class="col-9 p-4">
 				<h2>Crear categoria</h2>
 				<br>
+
 				<p>Agrega una nueva categoria y registra nuevos productos</p>
-				<form>
-					<input class="form-control w-50" placeholder="Ingresa el nombre de la categoria">
+
+				<form th:action="@{/categoria/crear}" th:objetc="${categoria}" method="post" >
+					<input class="form-control w-50" name="nombre" id="nombre" placeholder="Ingresa el nombre de la categoria">
 					<br>
 					<button type="submit" class="btn btn-primary">Enviar</button>
 				</form>

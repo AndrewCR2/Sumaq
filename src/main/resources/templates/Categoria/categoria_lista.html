@@ -18,37 +18,16 @@
 			</div>
 			
 			<div class="col-9">
-				<ul class="list-group">
+				<ul class="list-group" th:each="categoria : ${listita}">
 					<li class="list-group-item mt-3">
 						<div class="row d-flex align-items-center">
-							<span class="col-8 fs-5">Mermeladas</span>
+							<span class="col-8 fs-5" th:text="${categoria.nombre}" ></span>
 							<div class="col-4 d-flex justify-content-end">
 								<button type="button" class="btn btn-success me-3">Editar</button>
 								<button type="button" class="btn btn-danger">Eliminar</button>
 							</div>
 						</div>
 					</li>
-					
-					<li class="list-group-item mt-3">
-						<div class="row d-flex align-items-center">
-							<span class="col-8 fs-5">Yogures</span>
-							<div class="col-4 d-flex justify-content-end">
-								<button type="button" class="btn btn-success me-3">Editar</button>
-								<button type="button" class="btn btn-danger">Eliminar</button>
-							</div>
-						</div>
-					</li>
-					
-					<li class="list-group-item mt-3">
-						<div class="row d-flex align-items-center">
-							<span class="col-8 fs-5">Pasteles</span>
-							<div class="col-4 d-flex justify-content-end">
-								<button type="button" class="btn btn-success me-3">Editar</button>
-								<button type="button" class="btn btn-danger">Eliminar</button>
-							</div>
-						</div>
-					</li>
-
 				</ul>
 
 			</div>
