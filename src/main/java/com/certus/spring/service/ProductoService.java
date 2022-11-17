@@ -34,11 +34,12 @@ public class ProductoService implements IProductoService {
 		try {
 
 			if (!fileRecibido.isEmpty()) {
+				String rutaAbsoluta = "D:\\Documentos\\Temp\\ProductoImg";
 				try {
 
 					if (p.getUriImagen() != null) {
 
-						Path enlaceGuardado = Paths.get(config.pathImage() + "\\" + p.getUriImagen());
+						Path enlaceGuardado = Paths.get( rutaAbsoluta+ "\\" + p.getUriImagen());
 						File fileEliminar = enlaceGuardado.toFile();
 
 						if (fileEliminar.exists()) {
@@ -50,7 +51,7 @@ public class ProductoService implements IProductoService {
 					String newName = UUID.randomUUID().toString() + "." + NewExtention;
 
 					byte[] bytesFile = fileRecibido.getBytes();
-					Path enlaceAGuardar = Paths.get(config.pathImage() + "//" + newName);
+					Path enlaceAGuardar = Paths.get( rutaAbsoluta + "//" + newName);
 					Files.write(enlaceAGuardar, bytesFile);
 
 					p.setUriImagen(newName);

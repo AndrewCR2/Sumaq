@@ -45,7 +45,7 @@ public class HomeController {
 	}
 	
 	@GetMapping("/Productos")
-	public String ListarPersonajes(Model model) {
+	public String ListarProducto(Model model) {
 
 		model.addAttribute("TituloPagina", titlePage);
 		model.addAttribute("titulo", "Productos");
@@ -82,7 +82,7 @@ public class HomeController {
 
 		model.addAttribute("titulo", "Editando el producto " + rspta.getData().getNombre());
 
-		model.addAttribute("personaje", rspta.getData());
+		model.addAttribute("producto", rspta.getData());
 
 		return "form-producto";
 	}

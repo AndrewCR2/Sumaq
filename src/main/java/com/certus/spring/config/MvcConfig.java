@@ -17,7 +17,7 @@ public class MvcConfig implements WebMvcConfigurer {
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		// TODO Auto-generated method stub
 		WebMvcConfigurer.super.addResourceHandlers(registry);
-		registry.addResourceHandler("/" + folder + "/**").addResourceLocations("file:/" + pathFolder + "/");
+		registry.addResourceHandler("/ProductoImg/**").addResourceLocations("file:/D:/Documentos/Temp/ProductoImg/");
 
 	}
 
