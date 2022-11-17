@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Categoria")
+@Table(name = "categoria")
 public class Categoria {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,5 +28,14 @@ public class Categoria {
 	public void setEstado(Boolean estado) {
 		this.estado = estado;
 	}
+	
+
+	public int getIdCategoria() {
+		return idCategoria;
+	}
+	public void setIdPersonaje(int idCategoria) {
+		this.idCategoria = idCategoria;
+	}
+	
     
 }
