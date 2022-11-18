@@ -46,22 +46,8 @@ public class Usuario {
 	@NotEmpty(message = "No confirmaste tu contraseña")
 	private String confirmarContraseña;
 
-	public String getApellidos() {
-		return apellidos;
-	}
-
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
-	}
-
-	public int getIdUsuario() {
-		return idUsuario;
-	}
-
-	public void setIdUsuario(int idUsuario) {
-		this.idUsuario = idUsuario;
-	}
-
+	
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -70,12 +56,12 @@ public class Usuario {
 		this.nombre = nombre;
 	}
 
-	public String getDireccion() {
-		return direccion;
+	public String getApellidos() {
+		return apellidos;
 	}
 
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
 	}
 
 	public String getEmail() {
@@ -84,6 +70,14 @@ public class Usuario {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
 	}
 
 	public String getTelefono() {
@@ -109,6 +103,17 @@ public class Usuario {
 	public void setConfirmarContraseña(String confirmarContraseña) {
 		this.confirmarContraseña = confirmarContraseña;
 	}
+
+	public int getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+
+	
+	
 	
 
 }

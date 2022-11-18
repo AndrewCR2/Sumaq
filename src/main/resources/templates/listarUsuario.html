@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+	integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/CSS/estilos.css">
+<title th:text="${titulo}"></title>
+<link rel="stylesheet" th:href="@{/bootstrap/bootstrap.min.css}">
+</head>
+<body>
+
+	<header class="hero">
+		<nav class="nav container">
+			<div class="nav_logo">
+				<img src="/img/LogoSumaq.png" alt="" class="logo">
+			</div>
+			<ul class="nav_link nav_link-menu">
+
+				<li class="nav_items"><a href="#" class="nav_links">Ofecemos</a>
+				</li>
+				<li class="nav_items"><a href="#" class="nav_links">Productos</a>
+				</li>
+				<li class="nav_items"><a href="#" class="nav_links">Contactenos</a>
+				</li>
+				<li class="nav_items"><a href="#" class="nav_links">Pedir
+						Aqui</a></li>
+				<li class="nav_items"><a th:href="@{/listaUsuario}"
+					class="nav_links">Lista Usuarios</a></li>
+				<li class="nav_items"><a th:href="@{/login}" class="nav_links">Login</a>
+				</li>
+
+
+				<img src="/img/close.svg" alt="" class="nav_close">
+			</ul>
+
+			<div class="nav_menu">
+				<img src="/img/menu.svg" alt="" class="nav_img">
+
+			</div>
+		</nav>
+	</header>
+
+	<div class="container mt-4">
+		<div class="jumbotron">
+			<h1 class="display-4" th:text="${titulopagina}"></h1>
+			<br>
+
+			<hr class="my-4">
+			<div class="jumbotron">
+				<div class="list-group mt-4" th:each="usuario : ${listita}">
+					<div class="card" style="width: 18rem;">
+
+						<div class="card-body">
+							<h5 class="card-title" th:text="${usuario.nombre}"></h5>
+
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item" th:text="${usuario.apellidos}"></li>
+								<li class="list-group-item" th:text="${usuario.email}"></li>
+								<li class="list-group-item" th:text="${usuario.direccion}"></li>
+								<li class="list-group-item" th:text="${usuario.telefono}"></li>
+
+							</ul>
+							<a href="" class="btn btn-success">Editar</a> <a href=""
+								class="btn btn-danger">Eliminar</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<script src="/bootstrap/jquery.slim.min.js"></script>
+	<script src="/bootstrap/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

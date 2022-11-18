@@ -27,11 +27,14 @@ public class RegistroController {
     @Value("${title.registro}")
 	private String titlePage;
     
+    @Value("${title.lista}")
+    private String titleLista;
+    
     @Autowired 
 	@Qualifier("servicio1")
 	private IUsuarioService InterfaceUsuario;
 
-    @GetMapping({"/registro","Registro"})
+    @GetMapping({"/registro"})
 	public String Registro(Model model) {	
         String tituloImage = "UNETE A SUMAQ";
         String tituloForm = "Registrate ahora";
@@ -42,6 +45,29 @@ public class RegistroController {
         
 		return "registro";
 	}
+    
+    @GetMapping("/listar")
+    public String ListarUsuario(Model model) {
+    	model.addAttribute("titulopagina", "Listado de usuarios Registrados");
+    	model.addAttribute("titulo", titleLista);
+    	
+    	Response<Usuario> response = InterfaceUsuario.listarUsuario();
+    	
+    	if(response.getEstado()) {
+    		
+    		model.addAttribute("listita", response.getListData());
+    		
+    		return "listarUsuario";
+    		
+    	}else {
+    		
+    		return "errores";
+    	}
+    	
+    	
+    	
+    }
+    
     
     @GetMapping("/crear")
 	public String Formulario(Model model) {
@@ -74,10 +100,10 @@ public class RegistroController {
     	
     	Response<Usuario> respuesta = InterfaceUsuario.crearUsuario(user);
     	
-    	sStatus.setComplete();
+    	
     	if (respuesta.getEstado()) {
-			
-    		return "redicted:/login";
+    		sStatus.setComplete();
+    		return "redirect:/login";
     		
 		}else {
 			model.addAttribute("mensaje", respuesta.getMensaje());
