@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.certus.spring.models.Categoria;
-import com.certus.spring.models.Personaje;
 import com.certus.spring.models.Response;
 import com.certus.spring.repository.CategoriaDAO;
 import java.util.List;
@@ -51,8 +50,6 @@ public class CategoriaService implements ICategoriaService {
 
 		return response;
 	}
-
-	
 
 	@Override
 	public Response<Categoria> eliminarCategoria(Integer id) {

@@ -1,5 +1,7 @@
 package com.certus.spring.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,7 +31,7 @@ public class CategoriaController {
 	@Value("${title.generic}")
 	private String titlePage;
 	
-	@GetMapping({"/","lista","LISTA"})
+	@GetMapping({"","lista","LISTA"})
 	public String listaCategoria(Model model) {	
 		Response<Categoria> rspta = InterfaceCategoria.listarCategorias();
 		
@@ -63,8 +65,19 @@ public class CategoriaController {
 	}
 
 	@PostMapping("/crear")
-	public String crearCategoria(Categoria categoria, BindingResult result, Model model, SessionStatus sStatus){
-		
+	public String crearCategoria(
+		@Valid Categoria categoria, 
+		BindingResult result, 
+		Model model, 
+		SessionStatus sStatus){
+			
+			if (result.hasErrors()) {
+			model.addAttribute("TituloPagina", titlePage);
+			model.addAttribute("titulo", "Crear categoria");
+			model.addAttribute("parrafo","Agrega una nueva categoria y registra nuevos productos");
+			return "Categoria/categoria_form";
+		}
+
 		Response<Categoria> rspta = InterfaceCategoria.crearCategoria(categoria);
 		
 		if (rspta.getEstado()) {
@@ -81,13 +94,16 @@ public class CategoriaController {
 	@GetMapping("/Editar/{idCategoria}")
 	public String EditarCategoria(@PathVariable int idCategoria, Model model) {
 
-		model.addAttribute("TituloPagina", titlePage);
-
 		Response<Categoria> rspta = InterfaceCategoria.editarCategoria(idCategoria);
-		model.addAttribute("titulo", "Editando la categoria " +"'"+ rspta.getData().getNombre()+"'");
-		model.addAttribute("parrafo", "Edita la categoria y registra nuevamente los productos" );
-
-		model.addAttribute("categoria", rspta.getData());
+		
+		if(!rspta.getEstado()){
+			return "redirect/categoria/lista";
+		}else{
+			model.addAttribute("TituloPagina", titlePage);
+			model.addAttribute("titulo", "Editando la categoria " +"'"+ rspta.getData().getNombre()+"'");
+			model.addAttribute("parrafo", "Edita la categoria y registra nuevamente los productos" );
+			model.addAttribute("categoria", rspta.getData());
+		}
 
 		return "Categoria/categoria_form";
 	}
@@ -101,10 +117,10 @@ public class CategoriaController {
 		if (rspta.getEstado()) {
 			return "redirect:/categoria/lista";
 		} else {
-
+		
 			model.addAttribute("mensaje", rspta.getMensaje());
 			model.addAttribute("mensajeError", rspta.getMensajeError());
-			return "errores";
+			return "Categoria/errores";
 		}
 	
 	}
