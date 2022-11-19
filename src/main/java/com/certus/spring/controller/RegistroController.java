@@ -1,6 +1,4 @@
 package com.certus.spring.controller;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -24,7 +22,4 @@ public class RegistroController {
         model.addAttribute("tituloForm",tituloForm);
 		return "registro";
 	}
-
-
-    
 }

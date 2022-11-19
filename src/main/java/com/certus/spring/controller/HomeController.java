@@ -1,7 +1,5 @@
 package com.certus.spring.controller;
 
-
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,31 +17,29 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 
-
 import com.certus.spring.models.Productos;
 import com.certus.spring.models.Response;
 import com.certus.spring.service.IProductoService;
-
 
 @Controller
 @RequestMapping("/")
 @SessionAttributes("producto")
 public class HomeController {
-	
+
 	@Value("${title.generic}")
 	private String titlePage;
-	
+
 	@Autowired
 	@Qualifier("servicio1")
 	private IProductoService InterfaceProducto;
-	
-	@GetMapping({"/home","inicio","/","Home","Inicio"})
-	public String HolaMundo(Model model) {	
-	   model.addAttribute("TituloPagina",titlePage);
+
+	@GetMapping({ "/home", "inicio", "/", "Home", "Inicio" })
+	public String HolaMundo(Model model) {
+		model.addAttribute("TituloPagina", titlePage);
 
 		return "index";
 	}
-	
+
 	@GetMapping("/Productos")
 	public String ListarProducto(Model model) {
 
@@ -61,7 +57,7 @@ public class HomeController {
 			return "errores";
 		}
 	}
-	
+
 	@GetMapping("/crear")
 	public String Formulario(Model model) {
 		Productos producto = new Productos();
@@ -72,7 +68,7 @@ public class HomeController {
 
 		return "form-producto";
 	}
-	
+
 	@GetMapping("/Editar/{idProducto}")
 	public String EditarProducto(@PathVariable int idProducto, Model model) {
 
@@ -86,7 +82,7 @@ public class HomeController {
 
 		return "form-producto";
 	}
-	
+
 	@GetMapping("/Elimnar/{idProducto}")
 	public String ElimnarProducto(@PathVariable int idProducto, Model model) {
 
@@ -102,7 +98,6 @@ public class HomeController {
 		}
 	}
 
-	
 	@PostMapping("/form_pro")
 	public String creaProducto(@Valid Productos Mermelada, BindingResult result, Model model,
 			@RequestParam("ImagenDelFormulario") MultipartFile fileRecibido, SessionStatus sStatus) {
@@ -123,7 +118,5 @@ public class HomeController {
 			model.addAttribute("mensajeError", rspta.getMensajeError());
 			return "errores";
 		}
-
 	}
-
 }

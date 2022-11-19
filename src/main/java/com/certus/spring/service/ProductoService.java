@@ -34,7 +34,8 @@ public class ProductoService implements IProductoService {
 		try {
 
 			if (!fileRecibido.isEmpty()) {
-				String rutaAbsoluta = "D:\\Documentos\\Temp\\ProductoImg";
+				// String rutaAbsoluta = "D:\\Documentos\\Temp\\ProductoImg";
+				String rutaAbsoluta = "C:\\Users\\jsusg\\OneDrive\\Documentos\\Temp\\UploadsImg";
 				try {
 
 					if (p.getUriImagen() != null) {

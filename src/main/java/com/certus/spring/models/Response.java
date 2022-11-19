@@ -39,6 +39,4 @@ public class Response<E>  {
 	public void setListData(List<E> listData) {
 		ListData = listData;
 	}
-	
-	
 }

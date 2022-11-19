@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
+
 <head th:fragment="head">
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
     <link rel="stylesheet" href="/CSS/productos.css">
-     <link rel="stylesheet" href="/CSS/estilos.css">
-     <!--Icon-Font-->
+    <link rel="stylesheet" href="/CSS/estilos.css">
+    <!--Icon-Font-->
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-        <header class="hero" th:fragment="header">
+    <header class="hero" th:fragment="header">
         <nav class="nav container">
             <div class="nav_logo">
                 <img src="/img/LogoSumaq.png" alt="" class="logo">
@@ -22,7 +24,10 @@
                     <a href="#" class="nav_links">Ofecemos</a>
                 </li>
                 <li class="nav_items">
-                    <a href="#" class="nav_links"  th:href="@{/Productos}">Productos</a>
+                    <a href="#" class="nav_links" th:href="@{/categoria}">Categoria</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#" class="nav_links" th:href="@{/Productos}">Productos</a>
                 </li>
                 <li class="nav_items">
                     <a href="#" class="nav_links">Contactenos</a>
@@ -40,4 +45,5 @@
         </nav>
     </header>
 </body>
+
 </html>

@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
+
 <head>
-<meta charset="utf-8">
-<title th:text="${TituloPagina}"></title>
-<link rel="stylesheet" th:href="@{/bootstrap/bootstrap.min.css}">
-<link rel="stylesheet" href="/CSS/productos.css">
-<link rel="stylesheet" href="/CSS/estilos.css">
+	<meta charset="utf-8">
+	<title th:text="${TituloPagina}"></title>
+	<link rel="stylesheet" th:href="@{/bootstrap/bootstrap.min.css}">
+	<link rel="stylesheet" href="/CSS/productos.css">
+	<link rel="stylesheet" href="/CSS/estilos.css">
 </head>
+
 <body>
 
 	<header th:replace="/layout :: header"> </header>
-	 	<div class="container mt-2">
+	<div class="container mt-2">
 		<div class="jumbotron">
 			<h1 class="display-4" th:text="${titulo}"></h1>
 			<br>
@@ -20,9 +22,8 @@
 			<div class="jumbotron row ">
 				<div class="list-group mt-3 ml-3" th:each="producto : ${listita}">
 					<div class="card" style="width: 18rem;">
-						<img th:src="@{/ProductoImg/}+${producto.uriImagen}"
-							class="card-img-top" th:alt="${producto.uriImagen}">
-
+						<!-- <img th:src="@{/ProductoImg/}+${producto.uriImagen}" class="card-img-top" th:alt="${producto.uriImagen}"> -->
+						<img th:src="@{/UploadsImg/}+${producto.uriImagen}" class="card-img-top" th:alt="${producto.uriImagen}">
 						<div class="card-body">
 							<h5 class="card-title" th:text="${producto.nombre}"></h5>
 
@@ -31,10 +32,8 @@
 								<li class="list-group-item" th:text="${producto.descripcion}"></li>
 							</ul>
 
-							<a th:href="@{/Editar/}+${producto.idProducto}"
-								class="btn btn-success">Editar</a> <a
-								th:href="@{/Elimnar/}+${producto.idProducto}"
-								class="btn btn-danger">Eliminar</a>
+							<a th:href="@{/Editar/}+${producto.idProducto}" class="btn btn-success">Editar</a> <a
+								th:href="@{/Elimnar/}+${producto.idProducto}" class="btn btn-danger">Eliminar</a>
 						</div>
 					</div>
 				</div>
@@ -43,13 +42,13 @@
 		</div>
 
 	</div>
-	<a th:href="@{/crear}" class="btn-wsp"> <i
-		class="fa-solid fa-circle-plus"></i>
+	<a th:href="@{/crear}" class="btn-wsp"> <i class="fa-solid fa-circle-plus"></i>
 	</a>
-	<script src="https://kit.fontawesome.com/0ab519a029.js"crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/0ab519a029.js" crossorigin="anonymous"></script>
 	<script src="/JS/menu.js"></script>
 	<script src="/JS/menu-scroll.js"></script>
 	<script src="/bootstrap/jquery.slim.min.js"></script>
 	<script src="/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

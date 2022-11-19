@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org"
->
+<html xmlns:th="http://thymeleaf.org"></html>
+
 <head>
-<meta charset="UTF-8">
-<title th:text="${TituloPagina}"></title>
+  <meta charset="UTF-8">
+  <title th:text="${TituloPagina}"></title>
 </head>
-<body>	
-   <h1 th:text="${titulo}">Hola Mundo </h1>
-   
-   <hr>
-    
-    <div> 
-      <ul th:each="personaje : ${lista}">
-        <li th:text="${personaje.nombre}"></li>
-      </ul>
-    </div>
+
+<body>
+  <h1 th:text="${titulo}">Hola Mundo </h1>
+
+  <hr>
+
+  <div>
+    <ul th:each="personaje : ${lista}">
+      <li th:text="${personaje.nombre}"></li>
+    </ul>
+  </div>
 </body>
+
 </html>
