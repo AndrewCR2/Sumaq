@@ -4,13 +4,10 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-	integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-	crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="/CSS/estilos.css">
+
 <title th:text="${titulo}"></title>
 <link rel="stylesheet" th:href="@{/bootstrap/bootstrap.min.css}">
+<link rel="stylesheet" href="/CSS/estilos.css">
 </head>
 <body>
 
@@ -40,19 +37,20 @@
 
 			<div class="nav_menu">
 				<img src="/img/menu.svg" alt="" class="nav_img">
-
 			</div>
 		</nav>
 	</header>
 
 	<div class="container mt-4">
 		<div class="jumbotron">
-			<h1 class="display-4" th:text="${titulopagina}"></h1>
+			<center>
+				<h1 class="display-4" th:text="${titulopagina}"></h1>
+			</center>
 			<br>
 
 			<hr class="my-4">
-			<div class="jumbotron">
-				<div class="list-group mt-4" th:each="usuario : ${listita}">
+			<div class="jumbotron row">
+				<div class="list-group mt-3 ml-3" th:each="usuario : ${listita}">
 					<div class="card" style="width: 18rem;">
 
 						<div class="card-body">
@@ -65,7 +63,9 @@
 								<li class="list-group-item" th:text="${usuario.telefono}"></li>
 
 							</ul>
-							<a href="" class="btn btn-success">Editar</a> <a href=""
+							<a th:href="@{/Editar/}+ ${usuario.idUsuario}"
+								class="btn btn-success">Editar</a> <a
+								th:href="@{/Eliminar/}+ ${usuario.idUsuario}"
 								class="btn btn-danger">Eliminar</a>
 						</div>
 					</div>
@@ -85,7 +85,8 @@
 
 	<script src="/bootstrap/jquery.slim.min.js"></script>
 	<script src="/bootstrap/bootstrap.bundle.min.js"></script>
-
+	<script src="/JS/menu.js"></script>
+	<script src="/JS/menu-scroll.js"></script>
 
 </body>
 </html>

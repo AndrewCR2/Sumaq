@@ -1,20 +1,22 @@
 package com.certus.spring.service;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
+
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import com.certus.spring.models.Personaje;
 import com.certus.spring.models.Response;
 import com.certus.spring.models.Usuario;
 import com.certus.spring.repository.IUsuario;
 
-@Service
+
 @Component("servicio1")
-@Primary
 public class UsuarioService implements IUsuarioService {
 	
 	@Autowired
@@ -55,7 +57,41 @@ public class UsuarioService implements IUsuarioService {
 		
 		return response;
 	}
+	
+	@Override
+	public Response<Usuario> editarUsuario(Integer ID) {
+		Response<Usuario> response = new Response<>();
+		try {
+			Optional<Usuario> P = usuarioRepository.findById(ID);
+			response.setEstado(true);
+			response.setData(P.get());
 
+		} catch (Exception e) {
+			response.setEstado(false);
+			response.setMensajeError(e.getStackTrace().toString());
+		}
+
+		return response;
+	}
+	
+	@Override
+	public Response<Usuario> eliminarUsuario(Integer ID) {
+		
+		Response<Usuario> response = new Response<>();
+		try {
+			Optional<Usuario> P = usuarioRepository.findById(ID);	
+			usuarioRepository.deleteById(ID);
+			response.setEstado(true);
+			response.setMensaje("El Usuario "+P.get().getNombre()+"ha sido eliminado correctamente");
+
+		} catch (Exception e) {
+			response.setEstado(false);
+			response.setMensaje("Error al eliminar el Usuario");
+			response.setMensajeError(e.getStackTrace().toString());
+		}
+		
+		return response;
+	}
 	
 	
 	
