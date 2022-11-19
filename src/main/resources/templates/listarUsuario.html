@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title th:text="${titulo}"></title>
+<link rel="stylesheet" th:href="@{/bootstrap/bootstrap.min.css}">
+<link rel="stylesheet" href="/CSS/estilos.css">
+</head>
+<body>
+
+	<header th:replace="layout :: header" ></header>
+
+	<div class="container mt-4">
+		<div class="jumbotron">
+			<center>
+				<h1 class="display-4" th:text="${titulopagina}"></h1>
+			</center>
+			<br>
+
+			<hr class="my-4">
+			<div class="jumbotron row">
+				<div class="list-group mt-3 ml-3" th:each="usuario : ${listita}">
+					<div class="card" style="width: 18rem;">
+
+						<div class="card-body">
+							<h5 class="card-title" th:text="${usuario.nombre}"></h5>
+
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item" th:text="${usuario.apellidos}"></li>
+								<li class="list-group-item" th:text="${usuario.email}"></li>
+								<li class="list-group-item" th:text="${usuario.direccion}"></li>
+								<li class="list-group-item" th:text="${usuario.telefono}"></li>
+
+							</ul>
+							<a th:href="@{/usuario/Editar/}+ ${usuario.idUsuario}"
+								class="btn btn-success">Editar</a> <a
+								th:href="@{/usuario/Eliminar/}+ ${usuario.idUsuario}"
+								class="btn btn-danger">Eliminar</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<script src="/bootstrap/jquery.slim.min.js"></script>
+	<script src="/bootstrap/bootstrap.bundle.min.js"></script>
+	<script src="/JS/menu.js"></script>
+	<script src="/JS/menu-scroll.js"></script>
+
+</body>
+</html>

@@ -1,64 +1,108 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title th:text="${TituloPagina}"></title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/CSS/registro.css">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title th:text="${TituloPagina}"></title>
+<link rel="stylesheet" href="/CSS/registro.css">
+<link rel="stylesheet" th:href="@{/bootstrap/bootstrap.min.css}">
 </head>
 <body>
 
-<div class="dentro">
+	<div class="dentro">
 
-    <div class="hero_figure">
-        <div class="texto"><p id="text" th:text="${tituloImage}"></p></div><br>
-        <img src="/img/doble.png" class="img_mer">
-         
-    </div>
+		<div class="hero_figure">
+			<div class="texto">
+				<p id="text" th:text="${tituloImage}"></p>
+			</div>
+			<br> <img src="/img/doble.png" class="img_mer">
 
-    <div class="log">
-        <p class="regi" th:text="${tituloForm}"></p><br>
-        
-        
-        <div class="input-box"> 
-            <input type="text" placeholder="Nombre" class="input-control">
-        </div>
+		</div>
+		<form th:action="@{/usuario/form}" th:object="${usuario}" method="post"
+			enctype="multipart/form-data" class="log">
+			<p class="regi" th:text="${tituloForm}"></p>
 
-        <div class="input-box"> 
-        <input type="text" placeholder="Email" class="input-control">
-        </div>
 
-        <div class="input-box"> 
-            <input type="text" placeholder="telefono" class="input-control">
-        </div>
-        
-        <div class="input-box"> 
-            <input type="password" placeholder="contraseña" class="input-control">
-        </div>
+			<div class="form-group">
+				<input type="text" name="nombre" id="idNombre" th:field="*{nombre}"
+					placeholder="Primer Nombre" class="input-control">
+				<div class="alert alert-danger" role="alert"
+					th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+			</div>
 
-        <div class="input-box"> 
-            <input type="password" placeholder="confirmar contraseña" class="input-control">
-        </div>
+			<div class="form-group">
+				<input type="text" name="apellidos" id="idApellidos"
+					th:field="*{apellidos}" placeholder="Apellidos"
+					class="input-control">
+				<div class="alert alert-danger" role="alert"
+					th:if="${#fields.hasErrors('apellidos')}" th:errors="*{apellidos}"></div>
+			</div>
 
-        <button type="submit" class="btn">Registrate</button>
-    </div>
-    <footer class="footer">
-        <div class="logo-footer">
-            <img src="/img/LogoSumaq.png" alt="" class="img-footer">
-            <p>SUMAQ</p>
-        </div>
-        <p class="text">Siguenos en:</p>
-        <div class="redes">
-            <a href="https://www.facebook.com/profile.php?id=100086236074527" target="_blank" class="fb"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/sumaq.smaak/" target="_blank" class="in"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="yt"><i class="fab fa-youtube"></i></a>
-        </div>
-        <p class="copyright">©2022 Creado por SUMAQ.</p>
-    </footer>
-</div>
+			<div class="form-group">
+				<input type="email" name="email" id="idEmail" th:field="*{email}"
+					placeholder="Email" class="input-control">
+				<div class="alert alert-danger" role="alert"
+					th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+			</div>
 
- 
+			<div class="form-group">
+				<input type="text" name="direccion" id="idDireccion"
+					th:field="*{direccion}" placeholder="Dirección"
+					class="input-control">
+				<div class="alert alert-danger" role="alert"
+					th:if="${#fields.hasErrors('direccion')}" th:errors="*{direccion}"></div>
+			</div>
+
+			<div class="form-group">
+				<input type="text" name="telefono" id="idTelefono"
+					th:field="*{telefono}" placeholder="telefono" class="input-control">
+				<div class="alert alert-danger" role="alert"
+					th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></div>
+			</div>
+
+			<div class="form-group">
+				<input type="password" name="contraseña" id="idContraseña"
+					th:field="*{contraseña}" placeholder="contraseña"
+					class="input-control">
+				<div class="alert alert-danger" role="alert"
+					th:if="${#fields.hasErrors('contraseña')}"
+					th:errors="*{contraseña}"></div>
+			</div>
+
+			<div class="form-group">
+				<input type="password" name="confirmarContraseña"
+					id="idConfirmarContraseña" th:field="*{confirmarContraseña}"
+					placeholder="confirmar contraseña" class="input-control">
+				<div class="alert alert-danger" role="alert"
+					th:if="${#fields.hasErrors('confirmarContraseña')}"
+					th:errors="*{confirmarContraseña}"></div>
+			</div>
+
+			<button type="submit" class="btn btn-success" value="Crear Usuario">Registrate</button>
+		</form>
+
+
+		<footer class="footer">
+			<div class="logo-footer">
+				<img src="/img/LogoSumaq.png" alt="" class="img-footer">
+				<p>SUMAQ</p>
+			</div>
+			<p class="text">Siguenos en:</p>
+			<div class="redes">
+				<a href="https://www.facebook.com/profile.php?id=100086236074527"
+					target="_blank" class="fb"><i class="fab fa-facebook"></i></a> <a
+					href="https://www.instagram.com/sumaq.smaak/" target="_blank"
+					class="in"><i class="fab fa-instagram"></i></a> <a href="#"
+					class="yt"><i class="fab fa-youtube"></i></a>
+			</div>
+			<p class="copyright">©2022 Creado por SUMAQ.</p>
+		</footer>
+	</div>
+
+	<script src="/bootstrap/jquery.slim.min.js"></script>
+	<script src="/bootstrap/bootstrap.bundle.min.js"></script>
+
+
 </body>
 </html>

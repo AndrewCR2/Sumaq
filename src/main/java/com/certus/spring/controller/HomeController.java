@@ -30,7 +30,7 @@ public class HomeController {
 	private String titlePage;
 
 	@Autowired
-	@Qualifier("servicio1")
+	@Qualifier("servicioProducto")
 	private IProductoService InterfaceProducto;
 
 	@GetMapping({ "/home", "inicio", "/", "Home", "Inicio" })

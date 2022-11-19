@@ -19,7 +19,7 @@ import com.certus.spring.models.Productos;
 import com.certus.spring.models.Response;
 import com.certus.spring.repository.ProductoDAO;
 
-@Component("servicio1")
+@Component("servicioProducto")
 public class ProductoService implements IProductoService {
 
 	@Autowired
