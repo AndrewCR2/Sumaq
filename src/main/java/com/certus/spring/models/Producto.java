@@ -6,26 +6,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
- 
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "producto")
-public class Productos {
+public class Producto {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idProducto;
 	
-	@NotEmpty(message = "Indicar la nombre")
+	@NotEmpty(message = "Completar el nombre del personaje")
 	private String nombre;
 	
-	@NotEmpty(message = "Indicar la precio")
+	 
+	@NotEmpty(message = "Completar precio")
 	private String precio;
 	
+	@NotEmpty(message = "Completar descripción")
 	private String descripcion;
-	
+
 	private String uriImagen;
-	
-	
 
 	public int getIdProducto() {
 		return idProducto;
@@ -66,5 +67,8 @@ public class Productos {
 	public void setUriImagen(String uriImagen) {
 		this.uriImagen = uriImagen;
 	}
+	
+	
+	
 
 }

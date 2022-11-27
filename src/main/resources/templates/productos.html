@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<title th:text="${TituloPagina}"></title>
 	<link rel="stylesheet" th:href="@{/bootstrap/bootstrap.min.css}">
+	<link rel="stylesheet" href="/CSS/estilos.css">
 	<link rel="stylesheet" href="/CSS/productos.css">
 	<link rel="stylesheet" href="/CSS/estilos.css">
 </head>
@@ -22,8 +23,9 @@
 			<div class="jumbotron row ">
 				<div class="list-group mt-3 ml-3" th:each="producto : ${listita}">
 					<div class="card" style="width: 18rem;">
-						<!-- <img th:src="@{/ProductoImg/}+${producto.uriImagen}" class="card-img-top" th:alt="${producto.uriImagen}"> -->
-						<img th:src="@{/UploadsImg/}+${producto.uriImagen}" class="card-img-top" th:alt="${producto.uriImagen}">
+						<img th:src="@{/ProductoImg/}+${producto.uriImagen}" class="card-img-top"
+							th:alt="${producto.uriImagen}">
+
 						<div class="card-body">
 							<h5 class="card-title" th:text="${producto.nombre}"></h5>
 
@@ -32,16 +34,37 @@
 								<li class="list-group-item" th:text="${producto.descripcion}"></li>
 							</ul>
 
-							<a th:href="@{/Editar/}+${producto.idProducto}" class="btn btn-success">Editar</a> <a
-								th:href="@{/Elimnar/}+${producto.idProducto}" class="btn btn-danger">Eliminar</a>
+							<a th:href="@{/Editar/}+${producto.idProducto}" class="btn btn-success">Editar</a>
+							<a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Eliminar</a>
+							<!-- Modal -->
+							<div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel"
+								aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">¿Esta seguro que desea
+												eliminar?</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary"
+												data-dismiss="modal">No</button>
+											<a th:href="@{/Elimnar/}+${producto.idProducto}"
+												class="btn btn-primary">Si</a>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
+
 				</div>
 			</div>
-
 		</div>
-
 	</div>
+
 	<a th:href="@{/crear}" class="btn-wsp"> <i class="fa-solid fa-circle-plus"></i>
 	</a>
 	<script src="https://kit.fontawesome.com/0ab519a029.js" crossorigin="anonymous"></script>
