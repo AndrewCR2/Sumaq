@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.certus.spring.models.Productos;
+import com.certus.spring.models.Producto;
 import com.certus.spring.models.Response;
 import com.certus.spring.service.IProductoService;
 
@@ -45,7 +45,7 @@ public class HomeController {
 
 		model.addAttribute("TituloPagina", titlePage);
 		model.addAttribute("titulo", "Productos");
-		Response<Productos> rspta = InterfaceProducto.listarProducto();
+		Response<Producto> rspta = InterfaceProducto.listarProducto();
 
 		if (rspta.getEstado()) {
 			model.addAttribute("Mensaje", rspta.getMensaje());
@@ -57,10 +57,10 @@ public class HomeController {
 			return "errores";
 		}
 	}
-
+	
 	@GetMapping("/crear")
 	public String Formulario(Model model) {
-		Productos producto = new Productos();
+		Producto producto = new Producto();
 
 		model.addAttribute("TituloPagina", titlePage);
 		model.addAttribute("titulo", " - Crear Producto");
@@ -68,13 +68,13 @@ public class HomeController {
 
 		return "form-producto";
 	}
-
+	
 	@GetMapping("/Editar/{idProducto}")
 	public String EditarProducto(@PathVariable int idProducto, Model model) {
 
 		model.addAttribute("TituloPagina", titlePage);
 
-		Response<Productos> rspta = InterfaceProducto.editarProducto(idProducto);
+		Response<Producto> rspta = InterfaceProducto.editarProducto(idProducto);
 
 		model.addAttribute("titulo", "Editando el producto " + rspta.getData().getNombre());
 
@@ -82,11 +82,11 @@ public class HomeController {
 
 		return "form-producto";
 	}
-
+	
 	@GetMapping("/Elimnar/{idProducto}")
 	public String ElimnarProducto(@PathVariable int idProducto, Model model) {
 
-		Response<Productos> rspta = InterfaceProducto.eliminarProducto(idProducto);
+		Response<Producto> rspta = InterfaceProducto.eliminarProducto(idProducto);
 
 		if (rspta.getEstado()) {
 			return "redirect:/Productos";
@@ -98,15 +98,16 @@ public class HomeController {
 		}
 	}
 
+	
 	@PostMapping("/form_pro")
-	public String creaProducto(@Valid Productos Mermelada, BindingResult result, Model model,
+	public String creaProducto(@Valid Producto Mermelada, BindingResult result, Model model,
 			@RequestParam("ImagenDelFormulario") MultipartFile fileRecibido, SessionStatus sStatus) {
 
 		if (result.hasErrors()) {
 			return "form-producto";
 		}
 
-		Response<Productos> rspta = InterfaceProducto.crearProducto(Mermelada, fileRecibido);
+		Response<Producto> rspta = InterfaceProducto.crearProducto(Mermelada, fileRecibido);
 
 		if (rspta.getEstado()) {
 
@@ -118,5 +119,7 @@ public class HomeController {
 			model.addAttribute("mensajeError", rspta.getMensajeError());
 			return "errores";
 		}
+
 	}
+
 }

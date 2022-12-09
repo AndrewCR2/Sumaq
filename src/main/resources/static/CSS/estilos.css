@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 :root {
-    --padding-container: 20px 0;
+    --padding-container: 100px 0;
     --color-text:
 }
 
@@ -25,9 +25,9 @@ body {
 
 /*Header*/
 .hero {
-    /* position: fixed; */
-    /* top: 0; */
-    /* left: 0; */
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     transition: 0.5s;
     z-index: 10;
@@ -205,9 +205,10 @@ header.abajo {
 
 header.abajo .nav_logo {
     width: 82px;
-    padding: 8px;       
+    padding: 8px;
 }
-header.abajo{
+
+header.abajo {
     box-shadow: 0 4px 25px -22px black;
 }
 
@@ -423,7 +424,7 @@ header.abajo ul li a {
     text-align: center;
     border-radius: 50%;
     margin: 0 8px;
-    opacity:  0.75;
+    opacity: 0.75;
 }
 
 .fb {
@@ -433,7 +434,7 @@ header.abajo ul li a {
     padding: 3px;
 }
 
-.in{
+.in {
     background: rgb(255, 0, 170);
     border-radius: 50px;
     color: white;
@@ -447,7 +448,7 @@ header.abajo ul li a {
     padding: 3px;
 }
 
-.text{
+.text {
     text-align: center;
     font-size: 13px;
     padding-bottom: 10px;
@@ -461,5 +462,5 @@ header.abajo ul li a {
     margin-top: 15px;
     text-align: center;
     font-size: 13px;
-   
+
 }
