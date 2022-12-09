@@ -87,7 +87,6 @@ public class CategoriaController {
 			sStatus.setComplete();
 			return "redirect:/categoria/lista";
 		} else {
-			
 			model.addAttribute("mensaje",rspta.getMensaje());
 			model.addAttribute("mensajeError", rspta.getMensajeError());
 			return "errores";
@@ -96,9 +95,7 @@ public class CategoriaController {
 	
 	@GetMapping("/Editar/{idCategoria}")
 	public String EditarCategoria(@PathVariable int idCategoria, Model model) {
-
 		Response<Categoria> rspta = InterfaceCategoria.editarCategoria(idCategoria);
-		
 		if(!rspta.getEstado()){
 			return "redirect/categoria/lista";
 		}else{
@@ -108,14 +105,11 @@ public class CategoriaController {
 			model.addAttribute("categoria", rspta.getData());
 			model.addAttribute("btnForm", "Guardar cambios");
 		}
-
 		return "Categoria/categoria_form";
 	}
 	
 	@GetMapping("/Eliminar/{idCategoria}")
 	public String EliminarCategoria(@PathVariable int idCategoria, Model model) {
-		
-
 		Response<Categoria> rspta = InterfaceCategoria.eliminarCategoria(idCategoria);
 		
 		if (rspta.getEstado()) {
@@ -126,7 +120,5 @@ public class CategoriaController {
 			model.addAttribute("mensajeError", rspta.getMensajeError());
 			return "Categoria/errores";
 		}
-	
 	}
-
 }

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
+
 <head>
-<meta charset="utf-8">
-<title th:text="${TituloPagina}"></title>
-<link rel="stylesheet" th:href="@{/bootstrap/bootstrap.min.css}">
-<link rel="stylesheet" href="/CSS/productos.css">
-<link rel="stylesheet" href="/CSS/estilos.css">
+	<meta charset="utf-8">
+	<title th:text="${TituloPagina}"></title>
+	<link rel="stylesheet" th:href="@{/bootstrap/bootstrap.min.css}">
+	<link rel="stylesheet" href="/CSS/productos.css">
+	<link rel="stylesheet" href="/CSS/estilos.css">
 </head>
+
 <body>
 
 	<header th:replace="/layout :: header"> </header>
@@ -17,28 +19,32 @@
 			<hr class="my-4">
 
 			<div>
-				<form th:action="@{/form_pro}" th:object="${producto}" method="post"
-					enctype="multipart/form-data">
+				<form th:action="@{/form_pro}" th:object="${producto}" method="post" enctype="multipart/form-data">
 
 					<div class="form-group">
-						<label for="idNombre">Nombre</label> 
-						<input type="text" name="nombre" class="form-control" id="idNombre"th:field="*{nombre}">
-						<div class="alert alert-danger" role="alert"  th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+						<label for="idNombre">Nombre</label>
+						<input type="text" name="nombre" class="form-control" id="idNombre" th:field="*{nombre}">
+						<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('nombre')}"
+							th:errors="*{nombre}"></div>
 					</div>
 
 					<div class="form-group">
 						<label for="idPrecio">Precio</label>
-						 <input type="text" name="precio" class="form-control" id="idPrecio"th:field="*{precio}">
-						<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('precio')}" th:errors="*{precio}"></div>
+						<input type="text" name="precio" class="form-control" id="idPrecio" th:field="*{precio}">
+						<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('precio')}"
+							th:errors="*{precio}"></div>
 					</div>
 
 					<div class="form-group">
-						<label for="idDescripcion">Descripcion</label> 
-						<input type="text"name="descripcion" class="form-control" id="idDescripcion" th:field="*{descripcion}">
-						<div class="alert alert-danger" role="alert"th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}"></div>
+						<label for="idDescripcion">Descripcion</label>
+						<input type="text" name="descripcion" class="form-control" id="idDescripcion"
+							th:field="*{descripcion}">
+						<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('descripcion')}"
+							th:errors="*{descripcion}"></div>
 					</div>
 					<div class="form-group">
-						<label for="idUriImagen">Enlace Imagen</label> <input type="file" name="ImagenDelFormulario" class="form-control" id="idUriImagen">
+						<input type="file" name="ImagenDelFormulario"
+							class="form-control" id="idUriImagen">
 					</div>
 
 					<button type="submit" class="btn btn-success">Crear
@@ -54,4 +60,5 @@
 	<script src="/bootstrap/jquery.slim.min.js"></script>
 	<script src="/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

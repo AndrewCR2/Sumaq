@@ -5,4 +5,16 @@ Proyecto académico que se basa en un negocio que busca revalorizar productos or
 ![web](assets/web.png)
 
 
+```java
+//Categoria
+@OneToMany(mappedBy = "categoria")
+private List<Productos> productos = ArrayList<>();
+
+//Productos
+// lazy - hace que no se haga el get no se carga de la base de datos
+
+@ManyToOne(fetch = FechType.Lazy) 
+@JoinColum(name = "idCategoria")
+private Categoria categoria;
+```
 
