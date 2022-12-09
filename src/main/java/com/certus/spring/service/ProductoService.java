@@ -17,6 +17,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.certus.spring.config.MvcConfig;
 import com.certus.spring.models.Producto;
 import com.certus.spring.models.Response;
+import com.certus.spring.models.ResponseFile;
+import com.certus.spring.models.ProductoDTO;
 import com.certus.spring.repository.ProductoDAO;
 
 
@@ -25,6 +27,9 @@ public class ProductoService implements IProductoService {
 	
 	@Autowired
 	ProductoDAO productoRepository;
+
+	@Autowired
+	IFileGenericPr fileGeneric;
 	
 	@Autowired
 	MvcConfig config;
@@ -151,4 +156,53 @@ public class ProductoService implements IProductoService {
 		}
 		return response;
 	}
+
+
+	@Override
+	public Response<Producto> crearProductoAPI(ProductoDTO p) {
+		Response<Producto> response = new Response<>();
+		
+		try {
+			
+			if (!p.getFileBase64().isEmpty()) {
+				if (p.getUriImagen() != null) {
+					fileGeneric.eliminarFile(p.getUriImagen());
+				}
+				
+				ResponseFile respuesta = fileGeneric.crearFileAPI(p.getFileBase64(), p.getNombreFileExtension());
+				if (respuesta.isEstado()) {
+					p.setUriImagen(respuesta.getNombreFile());
+				}else {
+					response.setEstado(false);
+					response.setMensaje("Error al procesar el archivo"+respuesta.getNombreFile());
+					response.setMensajeError(respuesta.getMensajeError());
+					return response;
+				}
+				
+			}
+			
+			Producto Pr = new Producto(); 
+			
+			Pr.setIdProducto(p.getIdProducto());
+			Pr.setNombre(p.getNombre());
+			Pr.setDescripcion(p.getDescripcion());
+			Pr.setUriImagen(p.getUriImagen());
+			Pr.setPrecio(p.getPrecio());
+			
+			Producto producto = productoRepository.save(Pr);
+			response.setEstado(true);
+			response.setMensaje("El rpoducto"+producto.getNombre()+"ha sidocreado correctamente");			
+		} catch (Exception e) {
+			response.setEstado(false);
+			response.setMensaje("Error al crear el producto"+p.getNombre());
+			response.setMensajeError(e.getStackTrace().toString());
+		}
+				
+		return response;
+
+
+	}
+
+
+	
 }
