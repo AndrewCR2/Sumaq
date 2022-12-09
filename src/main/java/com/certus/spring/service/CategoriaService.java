@@ -88,4 +88,21 @@ public class CategoriaService implements ICategoriaService {
 		return response;
 	}
 
+	@Override
+	public Response<Categoria> buscarPorQuery(String q) {
+		Response<Categoria> response = new Response<>();
+		try {
+			response.setEstado(true);
+			response.setListData((List<Categoria>) categoriaRepository.findByNombre(q));
+			response.setMensaje("Personaje obtenidos exitosamente");
+
+		} catch (Exception e) {
+			response.setEstado(false);
+			response.setMensaje("Error al obtener los personajes");
+			response.setMensajeError(e.getStackTrace().toString());
+		}
+
+		return response;
+	}
+
 }
