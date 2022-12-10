@@ -23,7 +23,8 @@
 			<div class="jumbotron row ">
 				<div class="list-group mt-3 ml-3" th:each="producto : ${listita}">
 					<div class="card" style="width: 18rem;">
-						<img th:src="@{/ProductoImg/}+${producto.uriImagen}" class="card-img-top"
+						<!-- <img th:src="@{/ProductoImg/}+${producto.uriImagen}" class="card-img-top" -->
+						<img th:src="@{/UploadsImg/}+${producto.uriImagen}" class="card-img-top"
 							th:alt="${producto.uriImagen}">
 
 						<div class="card-body">
