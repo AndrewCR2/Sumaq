@@ -4,6 +4,7 @@ const $btnSearch = d.querySelector('.btn-search');
 const $searchContainer = d.querySelector('.search_container');
 const $inputSearch = d.querySelector('.input_search');
 const $results = d.querySelector('#search_results ul');
+const $formSearch = d.querySelector('#form-search');
 
 d.addEventListener('click', (e) => {
     if (e.target.matches('.btn-search')) {
@@ -18,7 +19,7 @@ d.addEventListener('click', (e) => {
         $searchContainer.classList.toggle('none-modal-search');
     }
 })
-d.addEventListener('submit', (e) => {
+$formSearch.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const value = $inputSearch.value;
@@ -30,6 +31,7 @@ d.addEventListener('submit', (e) => {
             let resultsHtml = '';
 
             productosArr.forEach(producto => {
+                // <img src="/ProductoImg/${producto.uriImagen}" alt="${producto.nombre}">
                 resultsHtml += `
                 <li>
                     <img src="/UploadsImg/${producto.uriImagen}" alt="${producto.nombre}">
