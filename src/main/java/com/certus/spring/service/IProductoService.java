@@ -16,6 +16,8 @@ public interface IProductoService {
 	
 	public Response<Producto> eliminarProducto(Integer ID);	
 	
+	public Response<Producto> productoPorId(Integer ID);	
+
 	public Response<Producto> listarProducto();
 
     public Response<Producto> buscarPorQuery(String q);

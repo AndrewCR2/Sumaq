@@ -41,7 +41,6 @@ public class ProductoService implements IProductoService {
 		try {
 			
 			if (!fileRecibido.isEmpty()) {
-				 
 				try {
 					
 					if (p.getUriImagen() != null) {
@@ -220,6 +219,24 @@ public class ProductoService implements IProductoService {
 			response.setMensaje("Error al obtener los productos");
 			response.setMensajeError(e.getStackTrace().toString());
 		}
+		return response;
+	}
+
+
+	@Override
+	public Response<Producto> productoPorId(Integer ID) {
+		Response<Producto> response = new Response<>();
+		
+		try {
+			Optional<Producto> p = productoRepository.findById(ID);
+			response.setEstado(true);
+			response.setData(p.get());
+			
+		} catch (Exception e) {
+			response.setEstado(false);
+			response.setMensajeError(e.getStackTrace().toString());
+		}
+		
 		return response;
 	}
 

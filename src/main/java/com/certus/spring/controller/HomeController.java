@@ -107,20 +107,38 @@ public class HomeController {
 		if (result.hasErrors()) {
 			return "form-producto";
 		}
-
+		
 		Response<Producto> rspta = InterfaceProducto.crearProducto(Mermelada, fileRecibido);
-
+		
 		if (rspta.getEstado()) {
-
+			
 			sStatus.setComplete();
 			return "redirect:/Productos";
-
+			
 		} else {
 			model.addAttribute("mensaje", rspta.getMensaje());
 			model.addAttribute("mensajeError", rspta.getMensajeError());
 			return "errores";
 		}
-
+		
 	}
 
+	@GetMapping("/producto/{idProducto}")
+	public String productoPorId(@PathVariable int idProducto, Model model) {
+	
+		model.addAttribute("TituloPagina", titlePage);
+	
+		Response<Producto> rspta = InterfaceProducto.productoPorId(idProducto);
+	
+		model.addAttribute("titulo", "Editando el producto " + rspta.getData().getNombre());
+	
+		model.addAttribute("id", rspta.getData().getIdProducto());
+		model.addAttribute("nombre", rspta.getData().getNombre());
+		model.addAttribute("descripcion", rspta.getData().getDescripcion());
+		model.addAttribute("precio", rspta.getData().getPrecio());
+		model.addAttribute("urlImagen", rspta.getData().getUriImagen());
+	
+		return "Producto/producto-vista";
+	}
+	
 }

@@ -63,6 +63,12 @@ public class ApiProductoController {
 		return rspta;
 	}
 
+    @GetMapping("/{id}")
+	public Response<Producto> productoPorId (@PathVariable int id){		
+		Response<Producto> rspta = InterfaceProducto.productoPorId(id);		
+		return rspta;
+	}
+
 	@GetMapping("/buscar")
     public Response<Producto> buscarPorQuery (@RequestParam(value = "q") String query) {
         Response<Producto> rspta = InterfaceProducto.buscarPorQuery(query);
