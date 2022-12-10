@@ -93,7 +93,7 @@ public class CategoriaService implements ICategoriaService {
 		Response<Categoria> response = new Response<>();
 		try {
 			response.setEstado(true);
-			response.setListData((List<Categoria>) categoriaRepository.findByNombre(q));
+			response.setListData((List<Categoria>) categoriaRepository.findByQuery(q));
 			response.setMensaje("Personaje obtenidos exitosamente");
 
 		} catch (Exception e) {

@@ -12,8 +12,7 @@ import com.certus.spring.models.Categoria;
 @Repository
 public interface CategoriaDAO extends CrudRepository<Categoria, Integer>{
 
-    // @Query(value = "SELECT * FROM categoria WHERE nombre LIKE '%:query%'", nativeQuery=true)
-    // List<Categoria> findByQuery(String query);
-    List<Categoria> findByNombre(String query);
+    @Query(value = "SELECT * FROM categoria WHERE nombre LIKE %?1%", nativeQuery=true)
+    List<Categoria> findByQuery(String query);
     
 }
