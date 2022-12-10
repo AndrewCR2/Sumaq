@@ -18,4 +18,6 @@ public interface IProductoService {
 	
 	public Response<Producto> listarProducto();
 
+    public Response<Producto> buscarPorQuery(String q);
+
 }

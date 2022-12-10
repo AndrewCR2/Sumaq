@@ -204,5 +204,25 @@ public class ProductoService implements IProductoService {
 	}
 
 
+	@Override
+	public Response<Producto> buscarPorQuery(String q) {
+
+		Response<Producto> response = new Response<>();
+		
+		try {
+			
+			response.setListData((List<Producto>) productoRepository.findByQuery(q));
+			response.setEstado(true);
+			response.setMensaje("Productos obtenidos correctamente");
+			
+		} catch (Exception e) {			
+			response.setEstado(false);
+			response.setMensaje("Error al obtener los productos");
+			response.setMensajeError(e.getStackTrace().toString());
+		}
+		return response;
+	}
+
+
 	
 }
