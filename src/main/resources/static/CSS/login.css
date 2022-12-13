@@ -17,6 +17,37 @@ body {
     margin: 0 auto;
     overflow: hidden;
 }
+/*Header*/
+.hero {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: 0.5s;
+    z-index: 10;
+}
+
+.wave {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+
+    background-repeat: no-repeat;
+    background-size: 100% 100px;
+}
+
+.wave--bottom {
+    left: 0;
+    bottom: 0;
+    background-image: var(--wave-bottom);
+}
+
+.wave--top {
+    left: 0;
+    top: 0;
+    background-image: var(--wave-top);
+}
+/*Nav*/
 .nav {
     --padding-container: 0;
     height: 100%;
@@ -49,12 +80,240 @@ body {
     display: block;
     object-fit: cover;
 }
+/*============== SEARCH ====================*/
+.search_container{
+    display: block;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background-color: rgba(2, 2, 2, 0.849);
+    position: absolute;
+    top: 0;
+    padding-top: 130px;
+}
+.search_container .search_box{
+    margin-top: 150px;
+    width: 600px;
+    margin: auto;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background: rgba(32, 32, 32, 0.534);
+    border-radius: 10px;
+}
+.search_box form{
+    padding: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: max-content 1fr max-content;
+}
+.search_box form button{
+    padding: 10px;
+    border: 1px solid rgb(254, 152, 0);
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: rgb(254, 152, 0);
+    border-radius: 5px;
+}
+.search_box form button:hover{
+    background-color:rgb(254, 152, 0);
+    color: white;
+}
+.search_box input{
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 1.4rem;
+    font-weight: 300;
+    border-radius: 5px;
+}
+.btn-search{
+    border-radius: 50%;
+    font-size: 1.6rem;
+    padding: 10px;
+}
+#search_results{
+    padding: 10px;
+    max-height: 500px;
+    overflow-y: scroll;
+
+}
+#search_results ul li{
+    margin: 10px 0;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    background-color:rgba(2, 2, 2, 0.479);
+    padding: 10;
+    border-radius: 5px;
+}
+#search_results ul li img{
+    width: 200px;
+    height: 150px;
+    color: white;
+}
+#search_results ul li div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+.result-title{
+    font-size: 1.3rem;
+    font-weight: bold;
+
+}
+.result-desc{
+    font-size: 1.1rem;
+}
+.none-modal-search{
+    display: none;
+}
 
 .nav_items {
     list-style: none;
     padding: 0px 20px;
+
 }
 
+
+.nav_items:nth-last-child(2) a {
+
+    padding: 10px 30px;
+    line-height: 50px;
+    color: rgb(254, 152, 0);
+    background: #fff;
+    border: 1px solid rgb(254, 152, 0);
+    border-radius: 25px;
+    position: relative;
+
+}
+
+.nav_items:nth-last-child(2) a:hover {
+
+    color: white;
+    background: rgb(254, 152, 0);
+
+
+}
+
+.nav_links {
+    color: #4a4845;
+    text-decoration: none;
+}
+
+.nav_links:hover {
+    color: rgb(254, 152, 0);
+    transition: .3s all;
+}
+
+.nav_menu {
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+}
+
+.nav_close {
+    display: var(--show, none);
+
+}
+
+.nav_img {
+    display: block;
+    width: 30px;
+
+}
+
+
+/*Hero Container*/
+
+.hero_container {
+    min-height: 85vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+    justify-items: center;
+}
+
+.hero_text {
+    max-width: 800px;
+    display: grid;
+    grid-auto-rows: max-content;
+
+    gap: 1em;
+    padding-bottom: 100px;
+    text-align: start;
+    --padding-container: 0;
+}
+
+.hero_title {
+    font-size: 3rem;
+}
+
+.hero_paragrahp {
+    margin-bottom: 20px;
+}
+
+.hero_figure {
+    max-width: 400px;
+
+}
+
+.hero_img {
+    width: 100%;
+    display: block;
+
+    filter: drop-shadow(5px 10px 20px rgb(109, 109, 109));
+
+}
+
+
+.cta {
+    display: inline-block;
+    background-color: #ffcb45;
+    justify-self: start;
+    color: white;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 32px;
+}
+
+header.abajo {
+    background-color: #fff;
+}
+
+header.abajo .nav_logo {
+    width: 82px;
+    padding: 8px;
+}
+
+header.abajo {
+    box-shadow: 0 4px 25px -22px black;
+}
+
+header.abajo .logo,
+header.abajo ul li a {
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------LOGIN---------------------------*/
 #registro{
     color: white;
     border-radius: 20px;
@@ -180,6 +439,10 @@ form button{
     color: white;
 }
 
+
+
+
+/*------footer-----------*/
 .footer {
     padding: 30px 0;
     background-color: #FDFDBD;
