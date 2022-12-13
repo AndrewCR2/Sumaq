@@ -18,6 +18,9 @@ d.addEventListener('click', (e) => {
         e.preventDefault();
         $searchContainer.classList.toggle('none-modal-search');
     }
+    if (e.target.matches('.btn-car')) {
+        getAddProducts();
+    }
 })
 $formSearch.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -31,18 +34,36 @@ $formSearch.addEventListener('submit', (e) => {
             let resultsHtml = '';
 
             productosArr.forEach(producto => {
+
+                const urlProductoVista = `${location.origin}/producto/${producto.idProducto}`;
+
                 // <img src="/ProductoImg/${producto.uriImagen}" alt="${producto.nombre}">
                 resultsHtml += `
                 <li>
-                    <img src="/UploadsImg/${producto.uriImagen}" alt="${producto.nombre}">
-                    <div>
-                        <p class="result-title">${producto.nombre}</p>
-                        <p class="result-desc">${producto.descripcion}</p>
-                    </div>
+                    <a href="${urlProductoVista}">
+                        <img src="/UploadsImg/${producto.uriImagen}" alt="${producto.nombre}">
+                        <div>
+                            <p class="result-title">${producto.nombre}</p>
+                            <p class="result-desc">${producto.descripcion}</p>
+                        </div>
+                    </a>
                 </li>`
             });
             $results.innerHTML = resultsHtml;
         })
         .catch(err => console.log(err));
-
 })
+
+const getAddProducts = () => {
+    const arrProductsId = JSON.parse(localStorage.getItem('productsId'));
+
+    arrProductsId.forEach(id => {
+        fetch(`${location.origin}/api/producto/${id}`)
+        .then(res => res.json())
+        .then(res => {
+            const producto = res.data;
+            console.log(producto);
+        })
+        .catch(err => console.log(arr));
+    })
+}
