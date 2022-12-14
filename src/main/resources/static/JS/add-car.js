@@ -9,3 +9,4 @@ $btnAddCar.addEventListener('click',()=>{
     arrProductsId.push(id);
     localStorage.setItem('productsId',JSON.stringify(arrProductsId));
 })
+
