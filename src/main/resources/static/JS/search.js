@@ -41,7 +41,7 @@ $formSearch.addEventListener('submit', (e) => {
                 resultsHtml += `
                 <li>
                     <a href="${urlProductoVista}">
-                        <img src="/UploadsImg/${producto.uriImagen}" alt="${producto.nombre}">
+                        <img src="/ProductoImg/${producto.uriImagen}" alt="${producto.nombre}">
                         <div>
                             <p class="result-title">${producto.nombre}</p>
                             <p class="result-desc">${producto.descripcion}</p>
