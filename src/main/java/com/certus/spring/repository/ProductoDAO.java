@@ -12,4 +12,7 @@ public interface ProductoDAO extends CrudRepository<Producto, Integer> {
 
     @Query(value = "SELECT * FROM producto WHERE nombre LIKE %?1%", nativeQuery=true)
     List<Producto> findByQuery(String query);
+
+    @Query(value = "SELECT * FROM producto LIMIT ?1", nativeQuery=true)
+    List<Producto> findLimit(Integer limit);
 }

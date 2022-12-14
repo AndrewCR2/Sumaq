@@ -21,22 +21,24 @@
 
 			<hr class="my-4">
 			<div class="jumbotron row ">
-				<div class="list-group mt-3 ml-3" th:each="producto : ${listita}">
-					<div class="card" style="width: 18rem;">
+				<div class="list-group mt-3 ml-3" th:each="producto : ${listita}" style="margin: auto;">
+					<div class="card" style="width: 18rem; height: 500px;">
 						<!-- <img th:src="@{/ProductoImg/}+${producto.uriImagen}" class="card-img-top" -->
 						<img th:src="@{/UploadsImg/}+${producto.uriImagen}" class="card-img-top"
-							th:alt="${producto.uriImagen}">
+							th:alt="${producto.uriImagen}" style="height: 250px;object-fit: cover;">
 
-						<div class="card-body">
+						<div class="card-body"
+							style="display: flex; flex-direction: column;justify-content: space-between; align-items: flex-start;">
 							<h5 class="card-title" th:text="${producto.nombre}"></h5>
 
 							<ul class="list-group list-group-flush">
 								<li class="list-group-item" th:text="${producto.precio}"></li>
 								<li class="list-group-item" th:text="${producto.descripcion}"></li>
 							</ul>
-
-							<a th:href="@{/Editar/}+${producto.idProducto}" class="btn btn-success">Editar</a>
-							<a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Eliminar</a>
+							<div>
+								<a th:href="@{/Editar/}+${producto.idProducto}" class="btn btn-success">Editar</a>
+								<a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Eliminar</a>
+							</div>
 							<!-- Modal -->
 							<div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel"
 								aria-hidden="true">
@@ -69,8 +71,8 @@
 	<a th:href="@{/crear}" class="btn-wsp"> <i class="fa-solid fa-circle-plus"></i>
 	</a>
 	<script src="https://kit.fontawesome.com/0ab519a029.js" crossorigin="anonymous"></script>
+	<script src="/JS/index.js" type="module"></script>
 	<script src="/JS/menu.js"></script>
-	<script src="/JS/search.js"></script>
 	<script src="/JS/menu-scroll.js"></script>
 	<script src="/bootstrap/jquery.slim.min.js"></script>
 	<script src="/bootstrap/bootstrap.bundle.min.js"></script>

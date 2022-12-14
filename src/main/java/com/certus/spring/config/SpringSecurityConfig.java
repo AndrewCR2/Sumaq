@@ -18,10 +18,15 @@ public class SpringSecurityConfig {
 		User.UserBuilder usuarios = User.withDefaultPasswordEncoder();
 		
 		UserDetails UsuarioOne = usuarios
-				.username("Admin")
-				.password("12345")
+				.username("jesus")
+				.password("jesus")
 				.roles("SuperAdmin")
 				.build();
+		// UserDetails UsuarioOne = usuarios
+		// 		.username("Admin")
+		// 		.password("12345")
+		// 		.roles("SuperAdmin")
+		// 		.build();
 		return new InMemoryUserDetailsManager(UsuarioOne);
 	}
 	

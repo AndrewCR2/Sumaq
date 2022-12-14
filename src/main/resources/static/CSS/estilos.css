@@ -147,6 +147,9 @@ body {
     font-size: 1.6rem;
     padding: 10px;
 }
+#search_results::-webkit-scrollbar{
+    width: 0;
+}
 #search_results{
     padding: 10px;
     max-height: 500px;
@@ -378,6 +381,9 @@ header.abajo ul li a {
 
 .ofrecemos_img {
     width: 100px;
+}
+main{
+    overflow: hidden;
 }
 
 /*Media Queries*/
