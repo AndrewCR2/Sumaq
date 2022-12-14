@@ -89,6 +89,39 @@ body {
     display: block;
     object-fit: cover;
 }
+/*Nav*/
+.nav {
+    --padding-container: 0;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.nav_title {
+    font-weight: 300;
+}
+
+.nav_link {
+
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+
+}
+
+.nav_logo {
+    width: 100px;
+    padding: 12px;
+}
+
+.logo {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
 
 /*============== SEARCH ====================*/
 .search_container {
