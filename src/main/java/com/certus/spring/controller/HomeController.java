@@ -40,6 +40,11 @@ public class HomeController {
 
 		return "index";
 	}
+	@GetMapping("/carrito")
+	public String carritoDeCompras(Model model){
+		model.addAttribute("TituloPagina", titlePage);
+		return "shopping-cart";
+	}
 
 	@GetMapping("/Productos")
 	public String ListarProducto(Model model) {
@@ -103,7 +108,7 @@ public class HomeController {
 	@PostMapping("/form_pro")
 	public String creaProducto(@Valid Producto Mermelada, BindingResult result, Model model,
 			@RequestParam("ImagenDelFormulario") MultipartFile fileRecibido, SessionStatus sStatus) {
-
+				
 		if (result.hasErrors()) {
 			return "form-producto";
 		}

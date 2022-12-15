@@ -17,8 +17,8 @@
     <main class="container">
         <div class="card-product">
             <div class="box-img">
-                <img th:src="@{/ProductoImg/}+${urlImagen}" alt=""> 
-                <!-- <img th:src="@{/UploadsImg/}+${urlImagen}" alt=""> -->
+                <!-- <img th:src="@{/ProductoImg/}+${urlImagen}" alt="">  -->
+                <img th:src="@{/UploadsImg/}+${urlImagen}" alt="">
             </div>
             <section>
                 <p class="product-title" th:text="${nombre}"></p>
@@ -26,7 +26,7 @@
                 <div class="product-price">
                     <span>S/</span><span th:text="${precio}"></span>
                 </div>
-                <button id="btn-add-car" th:data-id="${id}">  Añadir al carrito</button>
+                <button class="btn-add-car" th:data-id="${id}">  Añadir al carrito</button>
             </section>
         </div>
 
@@ -80,7 +80,7 @@
     <script src="/JS/menu.js"></script>
     <script src="/JS/index.js" type="module"></script>
     <script src="/JS/search.js"></script>
-    <script src="/JS/add-car.js"></script>
+    <script src="/JS/add-car.js" type="module"></script>
     <script src="/JS/menu-scroll.js"></script>
     <script src="/bootstrap/jquery.slim.min.js"></script>
     <script src="/bootstrap/bootstrap.bundle.min.js"></script>

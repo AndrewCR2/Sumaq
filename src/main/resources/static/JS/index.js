@@ -1,8 +1,12 @@
-import search from "./search.js";
+import { Config } from "./config.js";
+import { getAddProducts, loadCart } from "./btn-car.js";
+import {search } from "./search.js";
 
 document.addEventListener('DOMContentLoaded', ()=>{
     showSomeProducts();
-    search()
+    search();
+    loadCart();
+    getAddProducts();
 })
 
 function showSomeProducts(){
@@ -20,12 +24,12 @@ function showSomeProducts(){
                 contentHTML+=`
                 <div class="card-product" >
                 <a href="${urlProductoVista}">
-                            <img src="/UploadsImg/${producto.uriImagen}" alt="${producto.nombre}">
+                            <img src="/${Config.folder}/${producto.uriImagen}" alt="${producto.nombre}">
                             </a>
                             <p class="product-title">${producto.nombre}</p>
                             <div>
                                 <span class="product-price">S/${producto.precio}</span>
-                                <button data-id="${producto.idProducto}" >Agregar al carrito</button>
+                                <button class="btn-add-car" data-id="${producto.idProducto}" >Agregar al carrito</button>
                             </div>
                         </div>
                 `;

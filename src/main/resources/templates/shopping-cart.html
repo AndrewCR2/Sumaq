@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Icon-Font-->
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/CSS/estilos.css">
+    <link rel="stylesheet" href="/CSS/carrito.css">
+    <title th:text="${TituloPagina}"></title>
+
+</head>
+
+<body>
+    <header th:replace="layout :: header"></header>
+    <div class="container">
+        <h1>Carrito</h1>
+        
+
+        <main class="">
+            <div class="content display-none">
+                <section class="sec-products-cart">
+                    <h2><span class="my-cart-count"></span> productos en el carrito</h2>
+                    <ul class="list-products-cart">
+                        <!-- Contenido generado dinamicamente -->
+                    </ul>
+                </section>
+                <section class="sec-buy-products">
+                    <div>
+                        <h2>Total:</h2>
+                        <p>S/<span class="total-price"></span></p>
+                        <button>Pagar</button>
+                    </div>
+                </section>
+            </div>
+            <section class="empty-cart-list display-none">
+                <h2>0 productos en el carrito</h2>
+                <section>
+                    <div class="content">
+                        <div>
+                            <img src="/img/empty-cart.png" alt="empty-cart">
+                        </div>
+                        <p>Tu carrito está vacío </p>
+                        <button>Seguir comprando</button>
+                    </div>
+                </section>
+            </section>
+        </main>
+        
+
+    </div>
+    
+
+    <script src="/JS/index.js" type="module"></script>
+    <script src="/JS/shopping-cart.js" type="module"></script>
+    <script src="/JS/menu.js"></script>
+    <script src="/JS/menu-scroll.js"></script>
+</body>
+
+</html>

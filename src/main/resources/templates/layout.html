@@ -13,7 +13,7 @@
 
 <body>
     <header class="hero" th:fragment="header">
-        <nav class="nav container">
+        <nav class="nav nav-container">
             <a th:href="@{/}" class="nav_logo">
                 <img src="/img/LogoSumaq.png" alt="" class="logo">
             </a>
@@ -40,14 +40,25 @@
                 <img src="/img/close.svg" alt="" class="nav_close">
             </ul>
             <div class="nav-options">
-               
-                <i class="fa-solid fa-cart-shopping btn-shopping"></i>
+                <span class="box-car">
+                    <i class="fa-solid fa-cart-shopping btn-shopping btn-car">
+                        <span class="car-count none-car-products"></span>
+                    </i>
+                    <!-- Productos del carrito -->
+                    <section class="products-car none-car-products">
+                        <div class="list-products-car">
+                            <!-- Productos del carrito -->
+                            
+                        </div>
+                    </section>
+                </span>
                 <!-- <button class="btn-search">&#x1F50E;</button> -->
-                <i class="fa-solid fa-magnifying-glass btn-search"></i>
+                <i class="fa-solid fa-magnifying-glass btn-search">
+                    
+                </i>
                 <div class="nav_menu">
                     <img src="/img/menu.svg" alt="" class="nav_img">
                 </div>
-
             </div>
         </nav>
         <div class="search_container none-modal-search">
@@ -59,7 +70,7 @@
                 </form>
                 <div id="search_results">
                     <ul>
-                       
+
                     </ul>
                 </div>
             </div>

@@ -49,5 +49,4 @@ public class SpringSecurityConfig {
 		
 		return http.build();
 	}
-
 }
