@@ -1,32 +1,58 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.list-all-products {
+    margin-top: 30px;
+    width: 100%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
-.btn-wsp{
-    position:fixed;
-    width:60px;
-    height:60px;
-    line-height: 63px;
-    bottom:25px;
-    right:25px;
-    background:#25d366;
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
-    font-size:35px;
-    box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
-    z-index:100;
-    transition: all 300ms ease;
+.card-product {
+    /* min-width: 350px; */
+    height: 340px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.2);
 }
-.btn-wsp:hover{
-    background: #20ba5a;
+
+.card-product img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
 }
-@media only screen and (min-width:320px) and (max-width:768px){
-    .btn-wsp{
-        width:63px;
-        height:63px;
-        line-height: 66px;
-	}
+
+.product-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center;
+    color: rgb(72, 55, 11);
+}
+
+.product-price {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.card-product div {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.card-product div button {
+    padding: 10px 15px;
+    background-color: white;
+    border: 1px solid orange;
+    color: orange;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 30px;
+    transition: all 200ms;
+    cursor: pointer;
+}
+
+.card-product div button:hover {
+    background-color: orange;
+    color: white;
+
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${TituloPagina}"></title>
+    <!--Icon-Font-->
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/CSS/estilos.css">
+    <link rel="stylesheet" href="/CSS/productos.css">
+</head>
+
+<body>
+
+    <header th:replace="layout :: header"></header>
+    <section class="container">
+        <span style="font-size: 3rem; color: #343434; margin-top: 500px;">Productos</span>
+        <!-- <section class="list-all-products" th:each="producto : ${listita}"> -->
+        <section class="list-all-products" >
+            <!-- content -->
+        </section>
+    </section>
+</body>
+<script src="/JS/index.js" type="module"></script>
+<script src="/JS/add-car.js" type="module"></script>
+<script src="/JS/products.js" type="module"></script>
+<script src="/JS/menu.js"></script>
+<script src="/JS/menu-scroll.js"></script>
+
+</html>

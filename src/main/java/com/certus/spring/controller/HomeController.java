@@ -40,9 +40,31 @@ public class HomeController {
 
 		return "index";
 	}
+	@GetMapping("/carrito")
+	public String carritoDeCompras(Model model){
+		model.addAttribute("TituloPagina", titlePage);
+		return "shopping-cart";
+	}
 
-	@GetMapping("/Productos")
+	@GetMapping("/productos")
 	public String ListarProducto(Model model) {
+
+		model.addAttribute("TituloPagina", titlePage);
+		model.addAttribute("titulo", "Productos");
+		Response<Producto> rspta = InterfaceProducto.listarProducto();
+
+		if (rspta.getEstado()) {
+			model.addAttribute("Mensaje", rspta.getMensaje());
+			model.addAttribute("listita", rspta.getListData());
+			return "Producto/productos-lista";
+		} else {
+			model.addAttribute("mensaje", rspta.getMensaje());
+			model.addAttribute("mensajeError", rspta.getMensajeError());
+			return "errores";
+		}
+	}
+	@GetMapping("/Productos/admin")
+	public String ListarProductoAdmin(Model model) {
 
 		model.addAttribute("TituloPagina", titlePage);
 		model.addAttribute("titulo", "Productos");
@@ -90,7 +112,7 @@ public class HomeController {
 		Response<Producto> rspta = InterfaceProducto.eliminarProducto(idProducto);
 
 		if (rspta.getEstado()) {
-			return "redirect:/Productos";
+			return "redirect:/Productos/admin";
 		} else {
 			model.addAttribute("mensaje", rspta.getMensaje());
 			model.addAttribute("mensajeError", rspta.getMensajeError());
@@ -103,7 +125,7 @@ public class HomeController {
 	@PostMapping("/form_pro")
 	public String creaProducto(@Valid Producto Mermelada, BindingResult result, Model model,
 			@RequestParam("ImagenDelFormulario") MultipartFile fileRecibido, SessionStatus sStatus) {
-
+				
 		if (result.hasErrors()) {
 			return "form-producto";
 		}
@@ -113,7 +135,7 @@ public class HomeController {
 		if (rspta.getEstado()) {
 			
 			sStatus.setComplete();
-			return "redirect:/Productos";
+			return "redirect:/Productos/admin";
 			
 		} else {
 			model.addAttribute("mensaje", rspta.getMensaje());

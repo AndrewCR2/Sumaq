@@ -37,17 +37,24 @@ public class SpringSecurityConfig {
 		
 		http.authorizeRequests(
 				(req) -> req
-						.antMatchers("/home","/bootstrap/**","/CSS/**","/img/**","/JS/**").permitAll()
-						.antMatchers("/usuario/listar").hasRole("User")
+						.antMatchers("/").hasAnyRole("SuperAdmin","User")
+						.antMatchers("/productos").hasAnyRole("SuperAdmin","User")
+						.antMatchers("/productos").hasAnyRole("SuperAdmin","User")
+						.antMatchers("/usuario/crear").hasAnyRole("SuperAdmin","User")
+						/*Usuarios*/
+						.antMatchers("/usuario/listar").hasRole("SuperAdmin")
 						.antMatchers("/usuario/Editar/**").hasRole("SuperAdmin")
-						.antMatchers("/categoria/listar").hasRole("User")
+						/*Categoria*/
+						.antMatchers("/categoria/lista").hasRole("SuperAdmin")
 						.antMatchers("/categoria/Editar/**").hasRole("SuperAdmin")
-						.antMatchers("/home/Productos").hasRole("User")
-						.antMatchers("/home/Editar/**").hasRole("SuperAdmin")
+						.antMatchers("/categoria/crear/**").hasRole("SuperAdmin")
+						/*Productos*/
+						.antMatchers("/Productos/admin").hasRole("SuperAdmin")
+						.antMatchers("/Editar/**").hasRole("SuperAdmin")
+						.antMatchers("/crear/**").hasRole("SuperAdmin")
 						.anyRequest().authenticated()
 				).formLogin();
 		
 		return http.build();
 	}
-
 }

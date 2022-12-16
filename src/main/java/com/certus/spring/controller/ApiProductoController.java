@@ -31,6 +31,11 @@ public class ApiProductoController {
         Response<Producto> rspta = InterfaceProducto.listarProducto();
         return rspta;
     }
+    @GetMapping("/limit")
+    public Response<Producto> listarLimite (@RequestParam(value = "limit") String limit) {
+        Response<Producto> rspta = InterfaceProducto.listarPorLimite(Integer.parseInt(limit));
+        return rspta;
+    }
 
     @PutMapping("/editar/{id}")
 	public Response<Producto> editarProducto(@RequestBody ProductoDTO pro,@PathVariable int id){

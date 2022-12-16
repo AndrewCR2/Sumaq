@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500</title>
+    <link rel="stylesheet" href="/css/error.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h3>
+                <span th:text="${error}"></span> - <span th:text="${status}"></span>
+            </h3>
+            <p>Ocurrió un error interno.</p>
+        </div>
+    </div>
+</body>
+</html>

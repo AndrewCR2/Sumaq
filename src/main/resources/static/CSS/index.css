@@ -1,0 +1,79 @@
+.block3{
+    margin-top: 150px;
+    margin-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.block3 h2{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.block3 .btn-more-products{
+    margin-top: 40px;
+    color: orange;
+    font-size: 1.8rem;
+}
+.list-products::-webkit-scrollbar{
+    width: 0;
+}
+.list-products a{
+    text-decoration: none;
+}
+.list-products{
+    max-width: 1300px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+}
+.card-product{
+    min-width: 350px;
+    height: 340px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.2);
+}
+.card-product img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+.product-title{
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center;
+    color: rgb(72, 55, 11);
+}
+
+.product-price{
+    font-size: 1.2rem;
+    text-align: center;
+}
+.card-product div{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.card-product div button{
+    padding: 10px 15px;
+    background-color: white;
+    border: 1px solid orange;
+    color: orange;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 30px;
+    transition: all 200ms;
+    cursor: pointer;
+}
+.card-product div button:hover{
+    background-color: orange;
+    color: white;
+
+}
+

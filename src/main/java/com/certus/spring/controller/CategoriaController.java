@@ -31,7 +31,7 @@ public class CategoriaController {
 	@Value("${title.generic}")
 	private String titlePage;
 	
-	@GetMapping({"","lista","LISTA"})
+	@GetMapping({"/","lista","LISTA"})
 	public String listaCategoria(Model model) {	
 		Response<Categoria> rspta = InterfaceCategoria.listarCategorias();
 		

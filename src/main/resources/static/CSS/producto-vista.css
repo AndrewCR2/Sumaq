@@ -42,7 +42,7 @@ main div section .product-desc{
 main div section .product-price{
     font-size: 4rem;
 }
-#btn-add-car{
+.btn-add-car{
     margin-top: 30px;
     padding: 10px 20px;
     background-color: var(--color-main);
