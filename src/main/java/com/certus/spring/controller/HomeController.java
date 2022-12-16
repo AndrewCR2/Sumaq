@@ -46,8 +46,25 @@ public class HomeController {
 		return "shopping-cart";
 	}
 
-	@GetMapping("/Productos")
+	@GetMapping("/productos")
 	public String ListarProducto(Model model) {
+
+		model.addAttribute("TituloPagina", titlePage);
+		model.addAttribute("titulo", "Productos");
+		Response<Producto> rspta = InterfaceProducto.listarProducto();
+
+		if (rspta.getEstado()) {
+			model.addAttribute("Mensaje", rspta.getMensaje());
+			model.addAttribute("listita", rspta.getListData());
+			return "Producto/productos-lista";
+		} else {
+			model.addAttribute("mensaje", rspta.getMensaje());
+			model.addAttribute("mensajeError", rspta.getMensajeError());
+			return "errores";
+		}
+	}
+	@GetMapping("/Productos/admin")
+	public String ListarProductoAdmin(Model model) {
 
 		model.addAttribute("TituloPagina", titlePage);
 		model.addAttribute("titulo", "Productos");

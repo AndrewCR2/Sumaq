@@ -54,7 +54,7 @@
             <div class="list-products">
                 <!-- Contenido generado dinamicamente -->
             </div>
-            <a class="btn-more-products" href="#">Ver mas productos</a>
+            <a class="btn-more-products" th:href="@{/productos}">Ver mas productos</a>
         </section>
         <!-- ================================== -->
         <section class="ofrecemos_container container">
@@ -91,6 +91,9 @@
                         <a href="#" class="nav_links">Ofecemos</a>
                     </li>
                     <li class="nav_items1">
+                        <a th:href="@{/Productos/admin}" class="nav_links">¿Eres Admin?</a>
+                    </li>
+                    <!-- <li class="nav_items1">
                         <a href="#" class="nav_links" th:href="@{/categoria}">Categoria</a>
                     </li>
                     <li class="nav_items1">
@@ -98,7 +101,7 @@
                     </li>
                     <li class="nav_items1">
                         <a th:href="@{/usuario/listar}" class="nav_links">Usuarios</a>
-                    </li>
+                    </li> -->
 
                 </ul>
             </nav>

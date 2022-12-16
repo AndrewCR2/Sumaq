@@ -130,7 +130,8 @@ h1{
     font-size: 1rem;
     color: rgb(74, 74, 74);
 }
-.empty-cart-list section .content button{
+.empty-cart-list section .content a{
+    text-decoration: none;
     padding: 20px 30px;
     background-color: rgb(255, 165, 0);
     border: none;
@@ -139,7 +140,7 @@ h1{
     font-size: 1.2rem;
     cursor: pointer;
 }
-.empty-cart-list section .content button:hover{
+.empty-cart-list section .content a:hover{
     background-color: rgb(213, 139, 0);
 }
 .display-none{

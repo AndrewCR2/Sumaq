@@ -6,14 +6,13 @@
 	<title th:text="${TituloPagina}"></title>
 	<link rel="stylesheet" th:href="@{/bootstrap/bootstrap.min.css}">
 	<link rel="stylesheet" href="/CSS/estilos.css">
-	<link rel="stylesheet" href="/CSS/productos.css">
-	<link rel="stylesheet" href="/CSS/estilos.css">
+	<link rel="stylesheet" href="/CSS/productos-admin.css">
 </head>
 
 <body>
 
-	<header th:replace="/layout :: header"> </header>
-	<div class="container mt-2">
+	<header th:replace="/layout/layout-admin :: header-Admin"> </header>
+	<div class="container">
 		<div class="jumbotron">
 			<h1 class="display-4" th:text="${titulo}"></h1>
 			<br>

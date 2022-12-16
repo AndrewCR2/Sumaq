@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <!-- ====================== Header usuarios ======================-->
     <header class="hero" th:fragment="header">
         <nav class="nav nav-container">
             <a th:href="@{/}" class="nav_logo">
@@ -26,13 +27,15 @@
                     <a href="#" class="nav_links">Ofecemos</a>
                 </li>
                 <li class="nav_items">
-                    <a href="#" class="nav_links" th:href="@{/categoria}">Categoria</a>
+                    <!-- <a href="#" class="nav_links" th:href="@{/categoria}">Categoria</a> -->
+                    <a href="#" class="nav_links" >Categoria</a>
                 </li>
                 <li class="nav_items">
-                    <a href="#" class="nav_links" th:href="@{/Productos}">Productos</a>
+                    <a class="nav_links" th:href="@{/productos}">Productos</a>
+                    <!-- <a href="#" class="nav_links" >Productos</a> -->
                 </li>
                 <li class="nav_items">
-                    <a th:href="@{/usuario/listar}" class="nav_links">Usuarios</a>
+                    <a href="#" class="nav_links">Usuarios</a>
                 </li>
                 <li class="nav_items">
                     <a th:href="@{/usuario/crear}" class="nav_links">Registrate</a>
@@ -76,6 +79,17 @@
             </div>
         </div>
     </header>
+
+
+   
+
+
+
+
+
+
+
+
     <script src="/JS/carrito-vista.js"></script>
 </body>
 
