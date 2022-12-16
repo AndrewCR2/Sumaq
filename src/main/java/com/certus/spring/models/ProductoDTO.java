@@ -7,6 +7,7 @@ public class ProductoDTO {
 	private String precio;
 	private String descripcion;
 	private String uriImagen;
+	private String categoria;
     private String nombreFileExtension;
 	private String fileBase64;
 
@@ -37,6 +38,13 @@ public class ProductoDTO {
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 
     public String getPrecio() {

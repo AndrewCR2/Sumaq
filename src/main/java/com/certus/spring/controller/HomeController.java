@@ -137,6 +137,7 @@ public class HomeController {
 		model.addAttribute("descripcion", rspta.getData().getDescripcion());
 		model.addAttribute("precio", rspta.getData().getPrecio());
 		model.addAttribute("urlImagen", rspta.getData().getUriImagen());
+		model.addAttribute("categoria", rspta.getData().getCategoria());
 	
 		return "Producto/producto-vista";
 	}

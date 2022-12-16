@@ -13,5 +13,8 @@ public interface CategoriaDAO extends CrudRepository<Categoria, Integer>{
 
     @Query(value = "SELECT * FROM categoria WHERE nombre LIKE %?1%", nativeQuery=true)
     List<Categoria> findByQuery(String query);
+
+    // @Query(value = "SELECT * FROM categoria WHERE nombre=?1", nativeQuery=true)
+    // List<Producto> findByQuery(String query);
     
 }

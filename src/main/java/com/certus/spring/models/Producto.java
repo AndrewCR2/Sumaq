@@ -24,7 +24,11 @@ public class Producto {
 	@NotEmpty(message = "Completar descripción")
 	private String descripcion;
 
+	@NotEmpty(message = "Ingresar una Categoria")
+	private String categoria;
+
 	private String uriImagen;
+
 
 	public int getIdProducto() {
 		return idProducto;
@@ -40,6 +44,14 @@ public class Producto {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 
 	public String getPrecio() {
