@@ -6,32 +6,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title th:text="${TituloPagina}"></title>
+<script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/CSS/login.css">
+<link rel="stylesheet" href="/CSS/estilos.css">
 </head>
 
 <body>
-	<<header class="hero">
-		<nav class="nav container">
-			<div class="nav_logo">
-				<img src="img/LogoSumaq.png" alt="" class="logo">
-			</div>
-			<ul class="nav_link nav_link-menu">
-				<li class="nav_items"><a href="#" class="nav_links">Ofecemos</a>
-				</li>
-				<li class="nav_items"><a href="#" class="nav_links">Productos</a>
-				</li>
-				<li class="nav_items"><a href="#" class="nav_links">Contactenos</a>
-				</li>
-				<li class="nav_items"><a href="#" class="nav_links">Pedir
-						Aqui</a></li>
-				<li class="nav_items"><a th:href="@{/listaUsuario}"
-					class="nav_links">Lista Usuarios</a></li>
-				<li class="nav_items"><button id="registro">
-						<a id="manda" th:href="@{/crear}">Registrarse ahora</a>
-					</button></li>
-			</ul>
-		</nav>
-	</header>
+	<header th:replace="layout :: header"></header>
+
 	<div class="zone cont">
 		<div class="formu">
 			<div class="formu-img">
@@ -53,29 +35,63 @@
 					<a href="#" class="link">¿Olvidaste tu contraseña?</a>
 				</form>
 			</div>
-
 		</div>
 	</div>
+
+
 	<footer class="footer">
-		<div class="logo-footer">
-			<img src="/img/LogoSumaq.png" alt="" class="img-footer">
-			<p>SUMAQ</p>
-		</div>
-		<p class="text">Siguenos en:</p>
-		<div class="redes">
-			<a href="https://www.facebook.com/profile.php?id=100086236074527"
-				target="_blank" class="fb"><i class="fab fa-facebook"></i></a> <a
-				href="https://www.instagram.com/sumaq.smaak/" target="_blank"
-				class="in"><i class="fab fa-instagram"></i></a> <a href="#"
-				class="yt"><i class="fab fa-youtube"></i></a>
-		</div>
-		<p class="copyright">©2022 Creado por SUMAQ.</p>
-	</footer>
+        <section class="footer_container container">
+            <nav class="nav nav--footer">
+                <h2 class="footer_title">Sumaq</h2>
+
+                <ul class="nav_link nav_link--footer">
+
+                    <li class="nav_items1">
+                        <a href="#" class="nav_links">Nosotros</a>
+                    </li>
+                    <li class="nav_items1">
+                        <a href="#" class="nav_links">Ofecemos</a>
+                    </li>
+                    <li class="nav_items1">
+                        <a th:href="@{/Productos/admin}" class="nav_links">¿Eres Admin?</a>
+                    </li>
+                    <!-- <li class="nav_items1">
+                        <a href="#" class="nav_links" th:href="@{/categoria}">Categoria</a>
+                    </li>
+                    <li class="nav_items1">
+                        <a href="#" class="nav_links" th:href="@{/Productos}">Productos</a>
+                    </li>
+                    <li class="nav_items1">
+                        <a th:href="@{/usuario/listar}" class="nav_links">Usuarios</a>
+                    </li> -->
+                </ul>
+            </nav>
+            <form class="footer_form">
+                <h2 class="footer_newsletter">Registrese</h2>
+                <div class="footer_inputs">
+                    <input type="email" placeholder="Email:" class="footer_input">
+                    <input type="submit" value="Registrate" class="footer_submit">
+                </div>
+            </form>
+        </section>
+        <section class="footer_copy container">
+            <div class="footer_social">
+                <a href="https://www.instagram.com/sumaq.smaak/" target="_blank" class="footer_icons"><i
+                        class="fa-brands fa-instagram footer-icon"></i></a>
+                <a href="https://www.facebook.com/people/Sumaq/100086236074527/" target="_blank" class="footer_icons"><i
+                        class="fa-brands fa-facebook footer-icon"></i></a>
+                <a href="#" class="footer_icons"><i class="fa-brands fa-youtube footer-icon"></i></a>
+            </div>
+            <h3 class="footer_copyright">Derechos reservados &copy;</h3>
+        </section>
+    </footer>
 
 
 
 
 	<script src="/JS/login.js"></script>
+	<script src="/JS/menu.js"></script>
+	<script src="/JS/menu-scroll.js"></script>
 </body>
 
 </html>

@@ -86,7 +86,7 @@ public class RegistroController {
 		Response<Usuario> respuesta = InterfaceUsuario.crearUsuario(user);
 		if (respuesta.getEstado()) {
 			sStatus.setComplete();
-			return "redirect:/usuario/login";
+			return "redirect:/home";
 		} else {
 			model.addAttribute("mensaje", respuesta.getMensaje());
 			model.addAttribute("mensajeError", respuesta.getMensaje());

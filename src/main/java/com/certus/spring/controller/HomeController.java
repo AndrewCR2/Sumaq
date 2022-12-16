@@ -112,7 +112,7 @@ public class HomeController {
 		Response<Producto> rspta = InterfaceProducto.eliminarProducto(idProducto);
 
 		if (rspta.getEstado()) {
-			return "redirect:/Productos";
+			return "redirect:/Productos/admin";
 		} else {
 			model.addAttribute("mensaje", rspta.getMensaje());
 			model.addAttribute("mensajeError", rspta.getMensajeError());
@@ -135,7 +135,7 @@ public class HomeController {
 		if (rspta.getEstado()) {
 			
 			sStatus.setComplete();
-			return "redirect:/Productos";
+			return "redirect:/Productos/admin";
 			
 		} else {
 			model.addAttribute("mensaje", rspta.getMensaje());
