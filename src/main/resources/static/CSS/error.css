@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, sans-serif;
+}
+.container{
+    margin: auto;
+    max-width: 1200px;
+}
+.container div{
+    margin-top: 100px;
+    text-align: center;
+}
+.container span{
+    font-size: 4rem;
+    font-weight: bold;
+    color: rgb(64, 33, 0);
+}
+.container p{
+    margin-top: 20px;
+    font-size: 2rem;
+}
