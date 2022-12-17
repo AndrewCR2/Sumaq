@@ -54,7 +54,7 @@ public class ProductoPdfView extends AbstractPdfView {
    
            /*Titulo */
             Font  fuenteTitulo = FontFactory.getFont("Helvetica",16,Color.WHITE);
-            celda = new PdfPCell(new Phrase("Listado de Productos",fuenteTitulo));
+            celda = new PdfPCell(new Phrase("Listado de Producto",fuenteTitulo));
             celda.setBorder(0);
             celda.setBackgroundColor(new  Color(254, 152, 0));
             celda.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -69,7 +69,7 @@ public class ProductoPdfView extends AbstractPdfView {
   
            table.addCell("Nombre: "+producto.getNombre());
            table.addCell("Descripcion: "+producto.getDescripcion());
-           table.addCell("Nombre: "+producto.getPrecio());
+           table.addCell("Precio: "+producto.getPrecio());
    
            
             /*Imagen */
