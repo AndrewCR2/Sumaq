@@ -6,6 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title th:text="${TituloPagina}"></title>
 <link rel="stylesheet" href="/CSS/registro.css">
+<script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+	integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/CSS/estilos.css">
+<link rel="stylesheet" href="/CSS/registro.css">
 <link rel="stylesheet" th:href="@{/bootstrap/bootstrap.min.css}">
 </head>
 <body>
@@ -81,24 +87,12 @@
 
 			<button type="submit" class="btn btn-success" value="Crear Usuario">Registrate</button>
 		</form>
-
-
-		<footer class="footer">
-			<div class="logo-footer">
-				<img src="/img/LogoSumaq.png" alt="" class="img-footer">
-				<p>SUMAQ</p>
-			</div>
-			<p class="text">Siguenos en:</p>
-			<div class="redes">
-				<a href="https://www.facebook.com/profile.php?id=100086236074527"
-					target="_blank" class="fb"><i class="fab fa-facebook"></i></a> <a
-					href="https://www.instagram.com/sumaq.smaak/" target="_blank"
-					class="in"><i class="fab fa-instagram"></i></a> <a href="#"
-					class="yt"><i class="fab fa-youtube"></i></a>
-			</div>
-			<p class="copyright">©2022 Creado por SUMAQ.</p>
-		</footer>
 	</div>
+
+	
+
+	<footer th:replace="/layout/layout-footer :: footer">
+	</footer>
 
 	<script src="/bootstrap/jquery.slim.min.js"></script>
 	<script src="/bootstrap/bootstrap.bundle.min.js"></script>
