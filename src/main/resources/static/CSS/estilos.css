@@ -18,6 +18,7 @@ body {
     margin: auto;
     width: 1200px;
     margin-top: 100px;
+    padding: var(--padding-container);
 }
 .nav-container {
     width: 90%;

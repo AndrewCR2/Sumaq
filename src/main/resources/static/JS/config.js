@@ -1,3 +1,4 @@
 export const Config = {
-    folder: 'UploadsImg'
+    // folder: 'UploadsImg'
+    folder: 'ProductoImg'
 }

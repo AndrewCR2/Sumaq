@@ -105,6 +105,12 @@ public class HomeController {
 
 		return "form-producto";
 	}
+
+	@GetMapping("/ReporteProducto")
+	public String ReporteProducto(Model model) {
+		
+		return "productos";
+	}
 	
 	@GetMapping("/Elimnar/{idProducto}")
 	public String ElimnarProducto(@PathVariable int idProducto, Model model) {

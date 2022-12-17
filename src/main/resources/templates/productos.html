@@ -22,9 +22,10 @@
 			<div class="jumbotron row ">
 				<div class="list-group mt-3 ml-3" th:each="producto : ${listita}" style="margin: auto;">
 					<div class="card" style="width: 18rem; height: 500px;">
-						<!-- <img th:src="@{/ProductoImg/}+${producto.uriImagen}" class="card-img-top" -->
-						<img th:src="@{/UploadsImg/}+${producto.uriImagen}" class="card-img-top"
-							th:alt="${producto.uriImagen}" style="height: 250px;object-fit: cover;">
+						<img th:src="@{/ProductoImg/}+${producto.uriImagen}" class="card-img-top"
+						th:alt="${producto.uriImagen}" style="height: 250px;object-fit: cover;">
+						<!-- <img th:src="@{/UploadsImg/}+${producto.uriImagen}" class="card-img-top"
+							th:alt="${producto.uriImagen}" style="height: 250px;object-fit: cover;"> -->
 
 						<div class="card-body"
 							style="display: flex; flex-direction: column;justify-content: space-between; align-items: flex-start;">
@@ -37,6 +38,8 @@
 							<div>
 								<a th:href="@{/Editar/}+${producto.idProducto}" class="btn btn-success">Editar</a>
 								<a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Eliminar</a>
+									
+								<a th:href="@{'/Editar/'+${producto.idProducto}(format=pdf)}" target="_blank" class="btn btn-info">PDF</a>
 							</div>
 							<!-- Modal -->
 							<div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel"
@@ -66,7 +69,7 @@
 			</div>
 		</div>
 	</div>
-
+	<!-- <a th:href="@{/ReporteProducto/(format=pdf)}" target="_blank" class="btn btn-info">PDF</a> -->
 	<a th:href="@{/crear}" class="btn-wsp"> <i class="fa-solid fa-circle-plus"></i>
 	</a>
 	<script src="https://kit.fontawesome.com/0ab519a029.js" crossorigin="anonymous"></script>
