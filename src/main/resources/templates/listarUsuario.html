@@ -40,6 +40,8 @@
 							<a th:href="@{/usuario/Editar/}+ ${usuario.idUsuario}" class="btn btn-success">Editar</a> <a
 								th:href="@{/usuario/Eliminar/}+ ${usuario.idUsuario}"
 								class="btn btn-danger">Eliminar</a>
+
+							<a th:href="@{'/usuario/Editar/'+ ${usuario.idUsuario}(format=pdf)}" target="_blank" class="btn btn-info">PDF</a> 
 						</div>
 					</div>
 				</div>
@@ -51,7 +53,7 @@
 
 
 
-
+	<!-- <a th:href="@{/ReporteUsuario/(format=pdf)}" target="_blank" class="btn btn-info">PDF</a>  -->
 
 
 

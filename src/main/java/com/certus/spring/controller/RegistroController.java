@@ -111,6 +111,12 @@ public class RegistroController {
 		return "registro";
 	}
 
+	// @GetMapping("/ReporteUsuario")
+	// public String ReporteUsuario(Model model) {
+		
+	// 	return "registro";
+	// }
+
 	@GetMapping("/Eliminar/{idUsuario}")
 	public String EliminarPersonaje(@PathVariable int idUsuario, Model model) {
 
